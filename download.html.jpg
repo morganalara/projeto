@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+    
+    <title>Mais de 300 nomes para cachorro salsicha para se inspirar | Petz</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&#038;display=swap" /></noscript>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"cdc8fc4c06",applicationID:"1364726241"};;/*! For license information please see nr-loader-rum-1.241.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={5763:(e,t,n)=>{n.d(t,{P_:()=>g,Mt:()=>h,C5:()=>s,DL:()=>b,OP:()=>E,lF:()=>k,Yu:()=>w,Dg:()=>p,CX:()=>c,GE:()=>y,sU:()=>j});var r=n(8632),i=n(9567);const a={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},o={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!o[e])throw new Error("Info for ".concat(e," was never set"));return o[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");o[e]=(0,i.D)(t,a),(0,r.Qy)(e,o[e],"info")}var u=n(7056);const d=()=>{const e={block_selector:"[data-nr-block]",mask_input_options:{password:!0}};return{proxy:{assets:void 0,beacon:void 0},privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:u.oD,inactiveMs:u.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},metrics:{enabled:!0,autoStart:!0},page_action:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1,autoStart:!0},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},harvest:{tooManyRequestsDelay:60},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,sampling_rate:50,error_sampling_rate:50,mask_text_selector:"*",mask_all_inputs:!0,get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){e.block_selector+=",".concat(t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){e.mask_input_options={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0}}},l={},f="All configuration objects require an agent identifier!";function g(e){if(!e)throw new Error(f);if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function p(e,t){if(!e)throw new Error(f);l[e]=(0,i.D)(t,d()),(0,r.Qy)(e,l[e],"config")}function h(e,t){if(!e)throw new Error(f);var n=g(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const v={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},m={};function b(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!m[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return m[e]}function y(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");m[e]=(0,i.D)(t,v),(0,r.Qy)(e,m[e],"loader_config")}const w=(0,r.mF)().o;var A=n(385),x=n(6818);const _={buildEnv:x.Re,customTransaction:void 0,disabled:!1,distMethod:x.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(A._A?.performance?.timeOrigin||A._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+A._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof A._A.XMLHttpRequest?.prototype?.addEventListener,version:x.q4,denyList:void 0},D={};function E(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function j(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,_),(0,r.Qy)(e,D[e],"runtime")}function k(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(n).length?e:n;for(let o in a)if(void 0!==e[o])try{"object"==typeof e[o]&&"object"==typeof t[o]?n[o]=i(e[o],t[o]):n[o]=e[o]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>a,q4:()=>r});const r="1.241.0",i="PROD",a="CDN"},385:(e,t,n)=>{n.d(t,{Nk:()=>d,Tt:()=>s,_A:()=>a,cv:()=>l,iS:()=>o,il:()=>r,ux:()=>c,v6:()=>i,w1:()=>u});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),s=(a?.location,/iPad|iPhone|iPod/.test(a.navigator?.userAgent)),c=s&&"undefined"==typeof SharedWorker,u=((()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Boolean(r&&window.document.documentMode)),d=!!a.navigator?.sendBeacon,l=Math.floor(a?.performance?.timeOrigin||a?.performance?.timing?.navigationStart||Date.now())},1117:(e,t,n)=>{n.d(t,{w:()=>a});var r=n(50);const i={agentIdentifier:"",ee:void 0};class a{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,n)=>{n.d(t,{L:()=>d,R:()=>c});var r=n(8325),i=n(1284),a=n(4322),o=n(3325);const s={};function c(e,t){const n={staged:!1,priority:o.p[t]||0};u(e),s[e].get(t)||s[e].set(t,n)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(u(e),!e||!s[e].get(t))return o(t);s[e].get(t).staged=!0;const n=[...s[e]];function o(t){const n=e?r.ee.get(e):r.ee,o=a.X.handlers;if(n.backlog&&o){var s=n.backlog[t],c=o[t];if(c){for(var u=0;s&&u<s.length;++u)l(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete o[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((t=>{let[n]=t;s[e].delete(n),o(n)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],a=e[3],o=e[2];i.apply(a,o)}}))}},8325:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>u});var r=n(8632),i=n(2210),a=n(5763);class o{constructor(e){this.contextId=e}}var s=n(3117);const c="nr@context:".concat(s.a),u=function e(t,n){var r={},s={},d={},f=!1;try{f=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,a){!1!==a&&(a=!0);if(u.aborted&&!i)return;t&&a&&t.emit(e,n,r);for(var o=p(r),c=v(e),d=c.length,l=0;l<d;l++)c[l].apply(o,n);var f=b()[s[e]];f&&f.push([g,e,n,o]);return o},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof o?e:e?(0,i.X)(e,c,(()=>new o(c))):new o(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return d[t]=d[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),d=(0,r.fP)();function l(){u.aborted=!0,u.backlog={}}d.ee||(d.ee=u)},5546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(8325).ee.get("handle");function i(e,t,n,i,a){a?(a.buffer([e],i),a.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4322:(e,t,n)=>{n.d(t,{X:()=>a});var r=n(5546);a.on=o;var i=a.handlers={};function a(e,t,n,a){o(a||r.E,i,e,t,n)}function o(e,t,n,i,a){a||(a="feature"),e||(e=r.E);var o=t[a]=t[a]||{};(o[n]=o[n]||[]).push([e,i])}},3239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>o});var r=n(385);let i=!1,a=!1;try{const e={get passive(){return i=!0,!1},get signal(){return a=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function o(e,t){return i||a?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,o(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,o(n,r))}},3117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(4402).Rl)()},4402:(e,t,n)=>{n.d(t,{Rl:()=>o,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function a(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?a(t,++n).toString(16):"y"===e?(3&a()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const o=[];for(var s=0;s<e;s++)o.push(a(n,++i).toString(16));return o.join("")}},7056:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>a,oD:()=>i});const r="NRBA",i=144e5,a=18e5},7894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},2587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>u});var r=n(8325),i=n(5546),a=n(3325);const o={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]},s=new Set;function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(s.has(t)||Object.entries(e).forEach((e=>{let[t,r]=e;o[t]?o[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),u[t]=Boolean(r)})),Object.keys(o).forEach((e=>{void 0===u[e]&&(o[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),u[e]=!1)})),s.add(t))}const u={}},2210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},4351:(e,t,n)=>{n.d(t,{P:()=>a});var r=n(8325);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function a(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,n)=>{n.d(t,{K:()=>o,b:()=>a});var r=n(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(i())return e();(0,r.bP)("load",e,t)}function o(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},8632:(e,t,n)=>{n.d(t,{EZ:()=>u,Qy:()=>c,ce:()=>a,fP:()=>o,gG:()=>d,mF:()=>s});var r=n(7894),i=n(385);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function o(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=o();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=o();const a=i.initializedAgents||{},s=a[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...a,[e]:{...s,[n]:t}},i}function u(e,t){o()[e]=t}function d(){return function(){let e=o();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=o();const t=e.init||{};e.init={...t}}(),s(),function(){let e=o();const t=e.loader_config||{};e.loader_config={...t}}(),o()}},7956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),n,i)}},3081:(e,t,n)=>{n.d(t,{gF:()=>a,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>o});const r=n(3325).D.metrics,i="sm",a="cm",o="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewEvent},9251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewTiming},5938:(e,t,n)=>{n.d(t,{W:()=>a});var r=n(5763),i=n(8325);class a{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},7530:(e,t,n)=>{n.d(t,{j:()=>b});var r=n(3325),i=n(5763),a=n(5546),o=n(8325),s=n(7894),c=n(8e3),u=n(3960),d=n(385),l=n(50),f=n(3081),g=n(8632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let a=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&a.push(e.api[t](...r))})),a.length>1?a:a[0]}(t,...r)}}))}var h=n(2587);const v=e=>{n.p=e};let m=!1;function b(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},b=arguments.length>2?arguments[2]:void 0,y=arguments.length>3?arguments[3]:void 0,{init:w,info:A,loader_config:x,runtime:_={loaderType:b},exposed:D=!0}=t;const E=(0,g.gG)();A||(w=E.init,A=E.info,x=E.loader_config),(0,i.Dg)(e,w||{}),(0,i.GE)(e,x||{}),A.jsAttributes??={},d.v6&&(A.jsAttributes.isWorker=!0),(0,i.CX)(e,A);const j=(0,i.P_)(e),k=[A.beacon,A.errorBeacon];m||(m=!0,j.proxy.assets&&(v(j.proxy.assets+"/"),k.push(j.proxy.assets)),j.proxy.beacon&&k.push(j.proxy.beacon)),_.denyList=[...j.ajax.deny_list||[],...j.ajax.block_internal?k:[]],(0,i.sU)(e,_),p();const T=function(e,t){t||(0,c.R)(e,"api");const g={};var p=o.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,a){const o=(0,i.C5)(e);return null===n?delete o.jsAttributes[t]:(0,i.CX)(e,{...o,jsAttributes:{...o.jsAttributes,[t]:n}}),A(v,r,!0,a||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>{g[e]=A(v,e,!0,"api")})),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.start=e=>{try{const t=e?"defined":"undefined";(0,a.p)(f.xS,["API/start/".concat(t,"/called")],void 0,r.D.metrics,p);const n=Object.values(r.D);if(void 0===e)e=n;else{if((e=Array.isArray(e)&&e.length?e:[e]).some((e=>!n.includes(e))))return(0,l.Z)("Invalid feature name supplied. Acceptable feature names are: ".concat(n));e.includes(r.D.pageViewEvent)||e.push(r.D.pageViewEvent)}e.forEach((e=>{p.emit("".concat(e,"-opt-in"))}))}catch(e){(0,l.Z)("An unexpected issue occurred",e)}},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,o="function"==typeof t;return(0,a.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((o?"":"no-")+"fn-start",[(0,s.z)(),i,o],n),o)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,a.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,a.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,7438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,a.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,a.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},d.il?(0,u.b)((()=>x()),!0):x(),g}(e,y);return(0,g.Qy)(e,T,"api"),(0,g.Qy)(e,D,"exposed"),(0,g.EZ)("activatedFeatures",h.T),T}},3325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var a=r[e]={exports:{}};return n[e](a,a.exports,i),a.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum-1.241.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.241.0.PROD:",i.l=(n,r,a,o)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==a)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+a){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+a),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var a=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=a);var o=i.p+i.u(t),s=new Error;i.l(o,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var a=n&&("load"===n.type?"missing":n.type),o=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+a+": "+o+")",s.name="ChunkLoadError",s.type=a,s.request=o,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,a,[o,s,c]=n,u=0;if(o.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);u<o.length;u++)a=o[u],i.o(e,a)&&e[a]&&e[a][0](),e[a]=0},n=self["webpackChunk:NRBA-1.241.0.PROD"]=self["webpackChunk:NRBA-1.241.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}start(t){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(3325),r=i(5763);const a=Object.values(n.D);function o(e){const t={};return a.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(7530);var c=i(8e3),u=i(5938),d=i(3960),l=i(385);class f extends u.W{constructor(e,t,n){let i=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=i,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===(0,r.Mt)(this.agentIdentifier,"".concat(this.featureName,".autoStart"))&&(this.auto=!1),this.auto&&(0,c.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate)return;if(!this.auto)return void this.ee.on("".concat(this.featureName,"-opt-in"),(()=>{(0,c.R)(this.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator()}));const n=l.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let a;this.onAggregateImported=new Promise((e=>{a=e}));const o=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,3228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,c.L)(this.agentIdentifier,this.featureName),void a(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,8582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),a(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),a(!1)}};l.il?(0,d.b)((()=>o()),!0):o()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var g=i(7633);class p extends f{static featureName=g.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,g.t,n),this.importAggregator()}}var h=i(1117),v=i(1284);class m extends h.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var a=this.getBucket(e,t,n,i);return a.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,v.D)(e,(function(e,n){t[e]=b(n,t[e])})),t}(r,a.metrics),a}merge(e,t,n,r,i){var a=this.getBucket(e,t,r,i);if(a.metrics){var o=a.metrics;o.count+=n.count,(0,v.D)(n,(function(e,t){if("count"!==e){var r=o[e],i=n[e];i&&!i.c?o[e]=b(i.t,r):o[e]=function(e,t){if(!t)return e;t.c||(t=y(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,o[e])}}))}else a.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=b(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=w(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function b(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=y(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function y(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function w(e){return"object"!=typeof e?[]:(0,v.D)(e,A)}function A(e,t){return t}var x=i(8632),_=i(4402),D=i(4351);var E=i(5546),j=i(7956),k=i(3239),T=i(7894),N=i(9251);class S extends f{static featureName=N.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,N.t,n),l.il&&((0,j.N)((()=>(0,E.p)("docHidden",[(0,T.z)()],void 0,N.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,E.p)("winPagehide",[(0,T.z)()],void 0,N.t,this.ee))),this.importAggregator())}}var P=i(3081);class C extends f{static featureName=P.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,_.ky)(16);super(),l._A?(this.agentIdentifier=n,this.sharedAggregator=new m({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(p),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.run()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}run(){const t="features";try{const r=o(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,D.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,x.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,x.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[p,S,C],loaderType:"lite"})})()})();</script>
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="language" content="portuguese, BR, PT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+    
+
+<meta name="description" content="O Blog Petz separou mais de 300 nomes de cachorro salsicha para você se inspirar e escolher um apelido incrível para o seu novo amiguinho de quatro patas."/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Mais de 300 nomes para cachorro salsicha para se inspirar | Petz" />
+<meta property="og:description" content="O Blog Petz separou mais de 300 nomes de cachorro salsicha para você se inspirar e escolher um apelido incrível para o seu novo amiguinho de quatro patas." />
+<meta property="og:url" content="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/" />
+<meta property="og:site_name" content="Blog Petz - Tudo o que você precisa saber sobre o seu bichinho" />
+<meta property="article:section" content="Cachorros" />
+<meta property="og:image" content="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg" />
+<meta property="og:image:secure_url" content="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg" />
+<meta property="og:image:width" content="718" />
+<meta property="og:image:height" content="482" />
+<meta property="og:image:alt" content="nomes para cachorro salsicha3" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2021-05-07T12:01:05-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mais de 300 nomes para cachorro salsicha para se inspirar | Petz" />
+<meta name="twitter:description" content="O Blog Petz separou mais de 300 nomes de cachorro salsicha para você se inspirar e escolher um apelido incrível para o seu novo amiguinho de quatro patas." />
+<meta name="twitter:image" content="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Petz" />
+<meta name="twitter:label2" content="Tempo de leitura" />
+<meta name="twitter:data2" content="3 minutos" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.petz.com.br/blog/#organization","name":"Petz","url":"https://www.petz.com.br/blog"},{"@type":"WebSite","@id":"https://www.petz.com.br/blog/#website","url":"https://www.petz.com.br/blog","name":"Blog Petz - Tudo o que voc\u00ea precisa saber sobre o seu bichinho","alternateName":"Blog Petz - Tudo o que voc\u00ea precisa saber sobre o seu bichinho","publisher":{"@id":"https://www.petz.com.br/blog/#organization"},"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg","url":"https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg","width":"718","height":"482","caption":"nomes para cachorro salsicha3","inLanguage":"pt-BR"},{"@type":"BreadcrumbList","@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://www.petz.com.br/blog/","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/","name":"Mais de 300 nomes para cachorro salsicha para se inspirar"}}]},{"@type":"WebPage","@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#webpage","url":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/","name":"Mais de 300 nomes para cachorro salsicha para se inspirar | Petz","datePublished":"2021-05-07T12:01:05-03:00","dateModified":"2021-05-07T12:01:05-03:00","isPartOf":{"@id":"https://www.petz.com.br/blog/#website"},"primaryImageOfPage":{"@id":"https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg"},"inLanguage":"pt-BR","breadcrumb":{"@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#breadcrumb"}},{"@type":"Person","@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#author","name":"Petz","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/a501f2083cbc4cb2a99aa24f1abf2e26?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/a501f2083cbc4cb2a99aa24f1abf2e26?s=96&amp;d=mm&amp;r=g","caption":"Petz","inLanguage":"pt-BR"},"worksFor":{"@id":"https://www.petz.com.br/blog/#organization"}},{"@type":"BlogPosting","headline":"Mais de 300 nomes para cachorro salsicha para se inspirar | Petz","keywords":"nomes para cachorro salsicha","datePublished":"2021-05-07T12:01:05-03:00","dateModified":"2021-05-07T12:01:05-03:00","author":{"@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#author","name":"Petz"},"publisher":{"@id":"https://www.petz.com.br/blog/#organization"},"description":"O Blog Petz separou mais de 300 nomes de cachorro salsicha para voc\u00ea se inspirar e escolher um apelido incr\u00edvel para o seu novo amiguinho de quatro patas.","name":"Mais de 300 nomes para cachorro salsicha para se inspirar | Petz","@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#richSnippet","isPartOf":{"@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#webpage"},"image":{"@id":"https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg"},"inLanguage":"pt-BR","mainEntityOfPage":{"@id":"https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/#webpage"}}]}</script>
+
+
+<link rel="amphtml" href="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/amp/" /><link rel='dns-prefetch' href='//www.petz.com.br' />
+<link rel='dns-prefetch' href='//cdn.ampproject.org' />
+<link rel='dns-prefetch' href='//js.makestories.io' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog Petz &raquo; Mais de 300 nomes para cachorro salsicha para se inspirar" href="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/feed/" />
+<script id="advads-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://www.petz.com.br/blog/lib/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.petz.com.br/blog/lib/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='style-main-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/makestories-helper/assets/css/ms-style.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='slick-theme-css-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/makestories-helper/vendor/slick/slick-theme.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='slick-css-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/makestories-helper/vendor/slick/slick.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='amp-story-player-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/amp-story-player-v0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-style-css' href='https://www.petz.com.br/blog/wp-content/plugins/230ce1bf61/assets/css/owl.carousel.min.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='psac-public-style-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/post-slider-and-carousel/assets/css/psac-public.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='style_css-main-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='media-css' href='https://www.petz.com.br/blog/wp-admin/css/media.min.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='custom-boot-css-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/css/custom-boot-css.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='weblizar-fa-css' href='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/css/font-awesome.min.css' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.petz.com.br/blog/wp-content/plugins/ffee7df689/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type='text/javascript' src='https://www.petz.com.br/blog/lib/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/lib/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/amp-story-player-v0.js' id='amp-story-player-js' defer></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>
+/* <![CDATA[ */
+var advads_options = {"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/wp-content/plugins/advanced-ads/public/assets/js/advanced.min.js' id='advanced-ads-advanced-js-js'></script>
+<link rel='shortlink' href='https://www.petz.com.br/blog/?p=2449378' />
+<link rel="alternate" type="application/json+oembed" href="https://www.petz.com.br/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.petz.com.br%2Fblog%2Fcachorros%2Fnomes-para-cachorro-salsicha%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.petz.com.br/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.petz.com.br%2Fblog%2Fcachorros%2Fnomes-para-cachorro-salsicha%2F&#038;format=xml" />
+<meta name="cdp-version" content="1.4.3" />
+
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-58792402-2"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-58792402-2');
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  window._tfa = window._tfa || [];
+  window._tfa.push({notify: 'event', name: 'page_view', id: 1326100});
+  !function (t, f, a, x) {
+         if (!document.getElementById(x)) {
+            t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
+         }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/unip/1326100/tfa.js',
+  'tb_tfa_script');
+</script>
+<noscript>
+  <img src='https://trc.taboola.com/1326100/log/3/unip?en=page_view' width='0' height='0' />
+</noscript>
+
+<script type="text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			.breadcrumb {    
+    padding-left: 20px!important;   
+    margin-top: 15px;
+}
+/*** novas categorias***/
+#menu-item-2465080 a:before{
+ background-color: #00A0E4;
+ }
+#menu-item-2460905 a:before{
+ background-color: #f0563c;
+ }
+#menu-item-2461508 a:before{
+	background-color: #00A0E4;
+}
+@media (min-width: 992px) and (max-width: 1920px){
+header .top-menu nav ul li a {
+ padding: 10px 12px!important;
+}
+#menu-categorias li a{
+font-size: 14px;
+ margin-left: 0!important;
+ margin-right: 0!important;
+}
+#menu-categorias li{
+ margin-left: -3px;
+}
+}
+@media screen and (min-width: 1600px){
+	#menu-categorias li a{
+		font-size: 15px;
+	}
+	header .top-menu nav ul li a {
+ padding: 10px 16px!important;
+}
+}
+@media (max-width: 991px){
+
+ #menu-item-2465080 a{
+ color: #00A0E4;
+ }
+ #menu-item-2460905 a{
+ color: #f0563c;
+ }
+	#menu-item-2461508 a{
+	color: #00A0E4;
+}
+}
+
+/***** tempo de leitura*****/
+#tt-temp-estim{
+ margin-bottom: 27px!important;
+}
+/***ajustes do Breadcrumb*****/
+.rank-math-breadcrumb p{
+    display: flex;
+}
+.rank-math-breadcrumb p .last{
+    color: #00A0E4;
+    font-weight: bold;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+    <link data-minify="1" rel="stylesheet" href="https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/themes/petz/style.css">
+    <link rel="shortcut icon" type="image/png" href="https://www.petz.com.br/blog/themes/8cdeff5756/images/favicon.jpg?v=1663680495"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+	<link data-minify="1" rel="stylesheet" href="https://www.petz.com.br/blog/wp-content/cache/min/1/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript" async>
+        !function () {
+            var analytics = window.analytics = window.analytics || [];
+            if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+                analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+                analytics.factory = function (t) { return function () { var e = Array.prototype.slice.call(arguments);
+                    e.unshift(t); analytics.push(e);
+                    return analytics } };
+                    for (var t = 0; t < analytics.methods.length; t++) { var e = analytics.methods[t];
+                analytics[e] = analytics.factory(e) } analytics.load = function (t, e) { var n = document.createElement("script"); n.type = "text/javascript";
+                n.async = !0;
+                n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+                var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(n, a);
+                analytics._loadOptions = e };
+                analytics.SNIPPET_VERSION = "4.1.0";
+                analytics.load("x7a5ftBXuhYuVkSO32T4PTWpZRv0EESp");
+                analytics.page();
+            }
+        }();
+    </script>    
+    <script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/tag/js/gpt.js"></script>
+    <script type="rocketlazyloadscript">
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/21714511720/0002', [336, 280], 'div-gpt-ad-1629484322339-0').addService(googletag.pubads());
+      googletag.defineSlot('/21714511720/0001', [728, 90], 'div-gpt-ad-1629484494055-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+
+</head>
+<body class="post-template-default single single-post postid-2449378 single-format-standard aa-prefix-advads-">
+
+    <div class="box-site">
+
+        <header class="clearfix">
+            <div class="top-bar visible-desktop">
+                <div class="container">
+                    <div class="box">
+                      <ul id="menu-menu-topo" class="menu"><li id="menu-item-2436711" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436711"><a href="https://www.petz.com.br/">Petz.com.br</a></li>
+<li id="menu-item-2436712" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436712"><a href="https://www.petz.com.br/nossas-lojas">Nossas Lojas</a></li>
+<li id="menu-item-2436713" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436713"><a href="https://www.petz.com.br/atendimento-inteligente">Atendimento</a></li>
+<li id="menu-item-2436836" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2436836"><a href="https://www.petz.com.br/blog/mapa-do-site/">Mapa do site</a></li>
+<li id="menu-item-2438443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2438443"><a href="https://www.petz.com.br/black-friday">Black Friday Petz</a></li>
+</ul>                    <div class="social">
+                        <a href="https://www.instagram.com/petz/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="Grupo_118" data-name="Grupo 118" transform="translate(-1199 -9)">
+    <rect id="Retângulo_80" data-name="Retângulo 80" width="18" height="18" rx="5" transform="translate(1199 9)" fill="#5b5b5b"/>
+    <g id="instagram" transform="translate(1200.552 11)">
+      <path id="Caminho_19" data-name="Caminho 19" d="M14.4,4.112a5.11,5.11,0,0,0-.325-1.7A3.582,3.582,0,0,0,12.024.369a5.123,5.123,0,0,0-1.7-.325C9.579.008,9.341,0,7.442,0S5.306.008,4.56.041a5.112,5.112,0,0,0-1.7.325,3.412,3.412,0,0,0-1.24.809A3.443,3.443,0,0,0,.817,2.412a5.124,5.124,0,0,0-.325,1.7C.457,4.857.449,5.1.449,6.994S.457,9.13.49,9.876a5.11,5.11,0,0,0,.325,1.7,3.582,3.582,0,0,0,2.046,2.046,5.124,5.124,0,0,0,1.7.325c.746.033.984.041,2.882.041s2.136-.008,2.882-.041a5.109,5.109,0,0,0,1.7-.325,3.577,3.577,0,0,0,2.046-2.046,5.127,5.127,0,0,0,.325-1.7c.033-.746.041-.984.041-2.882s0-2.136-.036-2.882Zm-1.259,5.71a3.833,3.833,0,0,1-.24,1.3,2.32,2.32,0,0,1-1.328,1.328,3.847,3.847,0,0,1-1.3.24c-.738.033-.959.041-2.825.041s-2.09-.008-2.825-.041a3.831,3.831,0,0,1-1.3-.24,2.152,2.152,0,0,1-.8-.522,2.174,2.174,0,0,1-.522-.8,3.847,3.847,0,0,1-.24-1.3C1.724,9.087,1.716,8.865,1.716,7s.008-2.09.041-2.825A3.831,3.831,0,0,1,2,2.877a2.126,2.126,0,0,1,.525-.8,2.171,2.171,0,0,1,.8-.522,3.849,3.849,0,0,1,1.3-.24c.738-.033.959-.041,2.825-.041s2.09.008,2.825.041a3.833,3.833,0,0,1,1.3.24,2.15,2.15,0,0,1,.8.522,2.174,2.174,0,0,1,.522.8,3.849,3.849,0,0,1,.24,1.3c.033.738.041.959.041,2.825s-.008,2.085-.041,2.822Zm0,0" transform="translate(0 0)" fill="#ffd400"/>
+      <path id="Caminho_20" data-name="Caminho 20" d="M128.542,124.5a3.593,3.593,0,1,0,3.593,3.593A3.593,3.593,0,0,0,128.542,124.5Zm0,5.923a2.33,2.33,0,1,1,2.33-2.33A2.331,2.331,0,0,1,128.542,130.423Zm0,0" transform="translate(-121.099 -121.099)" fill="#ffd400"/>
+      <path id="Caminho_21" data-name="Caminho 21" d="M364.127,89.44a.839.839,0,1,1-.839-.839A.839.839,0,0,1,364.127,89.44Zm0,0" transform="translate(-352.111 -86.181)" fill="#ffd400"/>
+    </g>
+  </g>
+</svg>
+</a>
+                        <a href="https://www.youtube.com/petztube" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="19.974" height="18" viewBox="0 0 19.974 18">
+  <path id="youtube" d="M19.563-3.265A2.954,2.954,0,0,0,17.8-5.532c-1.563-.55-7.815-.55-7.815-.55s-6.252,0-7.815.53A3.022,3.022,0,0,0,.412-3.265,43.487,43.487,0,0,0,0,2.918,43.326,43.326,0,0,0,.412,9.1a2.954,2.954,0,0,0,1.761,2.266c1.579.551,7.815.551,7.815.551s6.252,0,7.815-.53a2.954,2.954,0,0,0,1.761-2.266,43.5,43.5,0,0,0,.411-6.183,41.278,41.278,0,0,0-.411-6.2ZM8,6.772V-.936l5.2,3.854Zm0,0" transform="translate(-0.001 6.082)" fill="#5b5b5b"/>
+</svg>
+</a>
+                        <a href="https://www.facebook.com/petzbr" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18.167" height="18.167" viewBox="0 0 18.167 18.167">
+  <g id="Grupo_117" data-name="Grupo 117" transform="translate(3 -1.23)">
+    <path id="facebook" d="M15.506,0H2.661A2.664,2.664,0,0,0,0,2.661V15.506a2.664,2.664,0,0,0,2.661,2.661H8.019V11.744H5.89V8.551H8.019V6.387a3.2,3.2,0,0,1,3.193-3.193h3.229V6.387H11.212V8.551h3.229l-.532,3.193h-2.7v6.422h4.293a2.664,2.664,0,0,0,2.661-2.661V2.661A2.664,2.664,0,0,0,15.506,0Zm0,0" transform="translate(-3 1.23)" fill="#5b5b5b"/>
+  </g>
+</svg>
+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="top-menu">
+                <div class="left-side">
+                    <div class="toggle-menu visible-mobile" js-toggle-menu>
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </div>
+                    <a href="https://www.petz.com.br/blog/" title="Ir para home" class="logo"><img width="141" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%2052'%3E%3C/svg%3E" alt="Logo da Petz Blog" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/logo.png"><noscript><img width="141" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/logo.png" alt="Logo da Petz Blog"></noscript></a>
+                    <nav>
+                        <ul id="menu-categorias" class="menu"><li id="menu-item-2390754" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390754"><a href="https://www.petz.com.br/blog/adocao/">Adoção</a></li>
+<li id="menu-item-2390764" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390764"><a href="https://www.petz.com.br/blog/pets/aquarismo/">Aquarismo</a></li>
+<li id="menu-item-2390759" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2390759"><a href="https://www.petz.com.br/blog/pets/caes/">Cães</a></li>
+<li id="menu-item-2390760" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390760"><a href="https://www.petz.com.br/blog/pets/gatos/">Gatos</a></li>
+<li id="menu-item-2437143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2437143"><a href="https://www.petz.com.br/blog/especies/">Espécies</a></li>
+<li id="menu-item-2390761" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390761"><a href="https://www.petz.com.br/blog/bem-estar/">Bem-Estar</a></li>
+<li id="menu-item-2439257" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2439257"><a href="https://www.petz.com.br/blog/posse-responsavel/">Posse responsável</a></li>
+<li id="menu-item-2465080" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465080"><a href="https://www.petz.com.br/blog/eventos-petz/">Eventos Petz</a></li>
+<li id="menu-item-2460905" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2460905"><a href="https://www.petz.com.br/blog/dr-pet/">Dr Pet</a></li>
+<li id="menu-item-2461508" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2461508"><a href="https://www.petz.com.br/blog/quiz/">Quiz</a></li>
+</ul>
+                        <div class="menu-mobile visible-mobile">
+                           <ul id="menu-menu-topo-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436711"><a href="https://www.petz.com.br/">Petz.com.br</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436712"><a href="https://www.petz.com.br/nossas-lojas">Nossas Lojas</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436713"><a href="https://www.petz.com.br/atendimento-inteligente">Atendimento</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2436836"><a href="https://www.petz.com.br/blog/mapa-do-site/">Mapa do site</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2438443"><a href="https://www.petz.com.br/black-friday">Black Friday Petz</a></li>
+</ul>                    </div>
+
+                    <div class="fecha-menu visible-mobile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22.328" height="22.328" viewBox="0 0 22.328 22.328">
+                          <g id="Grupo_111" data-name="Grupo 111" transform="translate(-6427.086 -28.086)">
+                            <line id="Linha_4" data-name="Linha 4" x1="19.5" y2="19.5" transform="translate(6428.5 29.5)" fill="none" stroke="#262626" stroke-width="4"/>
+                            <line id="Linha_5" data-name="Linha 5" x1="19.5" y1="19.5" transform="translate(6428.5 29.5)" fill="none" stroke="#262626" stroke-width="4"/>
+                        </g>
+                    </svg>
+
+                </div>
+
+            </nav>
+        </div>
+        <a href="#search-modal" data-modal class="btn-search">
+            <svg id="search" xmlns="http://www.w3.org/2000/svg" width="21.795" height="21.795" viewBox="0 0 21.795 21.795">
+  <g id="Grupo_4" data-name="Grupo 4" transform="translate(0 0)">
+    <g id="Grupo_3" data-name="Grupo 3" transform="translate(0 0)">
+      <path id="Caminho_1" data-name="Caminho 1" d="M9.6,0a9.6,9.6,0,1,0,9.6,9.6A9.609,9.609,0,0,0,9.6,0Zm0,17.424A7.826,7.826,0,1,1,17.424,9.6,7.835,7.835,0,0,1,9.6,17.424Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_6" data-name="Grupo 6" transform="translate(14.943 14.943)">
+    <g id="Grupo_5" data-name="Grupo 5">
+      <path id="Caminho_2" data-name="Caminho 2" d="M357.638,356.385l-5.08-5.08a.886.886,0,1,0-1.253,1.253l5.08,5.08a.886.886,0,0,0,1.253-1.253Z" transform="translate(-351.046 -351.046)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+        </a>
+    </div>
+</div>
+</header>
+
+<div class="categorias-mobile visible-mobile">
+ <ul id="menu-categorias-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390754"><a href="https://www.petz.com.br/blog/adocao/">Adoção</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390764"><a href="https://www.petz.com.br/blog/pets/aquarismo/">Aquarismo</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2390759"><a href="https://www.petz.com.br/blog/pets/caes/">Cães</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390760"><a href="https://www.petz.com.br/blog/pets/gatos/">Gatos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2437143"><a href="https://www.petz.com.br/blog/especies/">Espécies</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2390761"><a href="https://www.petz.com.br/blog/bem-estar/">Bem-Estar</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2439257"><a href="https://www.petz.com.br/blog/posse-responsavel/">Posse responsável</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465080"><a href="https://www.petz.com.br/blog/eventos-petz/">Eventos Petz</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2460905"><a href="https://www.petz.com.br/blog/dr-pet/">Dr Pet</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2461508"><a href="https://www.petz.com.br/blog/quiz/">Quiz</a></li>
+</ul></div>
+
+
+<div id="search-modal" style="display: none;">
+
+    <form class="search-form" action="https://www.petz.com.br/blog/">
+        <input type="search" placeholder="o que você procura?" value="" name="s" title="Buscar por:" />
+        <input type="text" name="post_type"  class="hidden">
+        <button>
+            <svg id="search" xmlns="http://www.w3.org/2000/svg" width="21.795" height="21.795" viewBox="0 0 21.795 21.795">
+  <g id="Grupo_4" data-name="Grupo 4" transform="translate(0 0)">
+    <g id="Grupo_3" data-name="Grupo 3" transform="translate(0 0)">
+      <path id="Caminho_1" data-name="Caminho 1" d="M9.6,0a9.6,9.6,0,1,0,9.6,9.6A9.609,9.609,0,0,0,9.6,0Zm0,17.424A7.826,7.826,0,1,1,17.424,9.6,7.835,7.835,0,0,1,9.6,17.424Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_6" data-name="Grupo 6" transform="translate(14.943 14.943)">
+    <g id="Grupo_5" data-name="Grupo 5">
+      <path id="Caminho_2" data-name="Caminho 2" d="M357.638,356.385l-5.08-5.08a.886.886,0,1,0-1.253,1.253l5.08,5.08a.886.886,0,0,0,1.253-1.253Z" transform="translate(-351.046 -351.046)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+        </button>
+    </form>
+
+</div>
+<link data-minify="1" rel="stylesheet" type="text/css" href="https://www.petz.com.br/blog/wp-content/cache/min/1/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<main id="blog" class="single">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="breadcrumb">
+					<nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="https://www.petz.com.br/blog/">Home</a><span class="separator"> &raquo; </span><span class="last">Mais de 300 nomes para cachorro salsicha para se inspirar</span></p></nav>				
+				</div>
+				<div class="topo">
+					<h1>Mais de 300 nomes para cachorro salsicha para se inspirar</h1>
+					<h4>Postado por PETZ,  em Atualizado em May 4, 2021</h4>
+					<div class="img-principal">
+						<div class="cat" style="background-color: #00A0E4">Cachorros</div>
+						<img width="718" height="482" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20718%20482'%3E%3C/svg%3E" alt="Mais de 300 nomes para cachorro salsicha para se inspirar" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg"><noscript><img width="718" height="482" src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg" alt="Mais de 300 nomes para cachorro salsicha para se inspirar"></noscript>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-1 offset-lg-1">
+				<div class="area-lateral">
+					<div class="social">
+						<a href="https://www.pinterest.com/pin/create/button/?url=https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/&media=https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg&description=Mais de 300 nomes para cachorro salsicha para se inspirar" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="34.134" height="34.142" viewBox="0 0 34.134 34.142">
+  <path id="Caminho_11" data-name="Caminho 11" d="M69.447,91.81a17.017,17.017,0,1,1,2.122.766c.543-1.341,1.161-2.664,1.613-4.041s.744-2.821,1.085-4.152c.293.247.588.509.9.753a5.887,5.887,0,0,0,5.323.934,8.035,8.035,0,0,0,4.8-3.317,12.87,12.87,0,0,0,2.223-9.465,8.909,8.909,0,0,0-5.833-7.324,12.476,12.476,0,0,0-13.585,2.252,9.865,9.865,0,0,0-2.65,10.9,5.131,5.131,0,0,0,2.568,2.8c.626.3.892.176,1.073-.478.013-.049.03-.1.048-.144a2.48,2.48,0,0,0-.351-2.55c-1.125-1.609-.924-3.472-.382-5.257A7.941,7.941,0,0,1,76,67.812a11.668,11.668,0,0,1,2.848.3,5.938,5.938,0,0,1,4.681,5.59,12.978,12.978,0,0,1-1.188,6.492,6.15,6.15,0,0,1-2.075,2.562,3.492,3.492,0,0,1-2.932.567,2.561,2.561,0,0,1-1.921-3.178c.383-1.516.879-3,1.255-4.522a5.994,5.994,0,0,0,.177-1.993,2.211,2.211,0,0,0-3.433-1.742,3.889,3.889,0,0,0-1.878,2.8,6.759,6.759,0,0,0,.264,3.586,1.5,1.5,0,0,1,.035.772c-.715,3.116-1.479,6.222-2.156,9.346a19.905,19.905,0,0,0-.227,2.814C69.436,91.389,69.447,91.571,69.447,91.81Z" transform="translate(-59.185 -59.144)" fill="#fff"/>
+</svg>
+</a>
+						<a href="https://api.whatsapp.com/send?text=Mais de 300 nomes para cachorro salsicha para se inspirar - https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/" target="_blank"><svg id="whatsapp" xmlns="http://www.w3.org/2000/svg" width="30.215" height="30.215" viewBox="0 0 30.215 30.215">
+  <g id="Grupo_42" data-name="Grupo 42">
+    <path id="Caminho_10" data-name="Caminho 10" d="M15.111,0H15.1A15.1,15.1,0,0,0,2.876,23.962L.993,29.575,6.8,27.718A15.1,15.1,0,1,0,15.111,0ZM23.9,21.334a4.263,4.263,0,0,1-2.965,2.132c-.789.168-1.82.3-5.291-1.137-4.44-1.839-7.3-6.351-7.522-6.643A8.628,8.628,0,0,1,6.33,11.129,4.823,4.823,0,0,1,7.875,7.452,2.195,2.195,0,0,1,9.419,6.91c.187,0,.355.009.506.017.444.019.667.045.959.746.364.878,1.252,3.046,1.358,3.269a.9.9,0,0,1,.064.818,2.611,2.611,0,0,1-.489.693c-.223.257-.434.453-.657.729-.2.24-.434.5-.178.94a13.409,13.409,0,0,0,2.451,3.046,11.107,11.107,0,0,0,3.543,2.185.955.955,0,0,0,1.065-.168,18.278,18.278,0,0,0,1.18-1.564.843.843,0,0,1,1.084-.329c.408.142,2.566,1.209,3.01,1.43s.736.329.844.516A3.762,3.762,0,0,1,23.9,21.334Z" fill="#fff"/>
+  </g>
+</svg>
+</a>
+						<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/'),'facebook-dialog','width=626,height=436'); return false;"><svg id="Bold" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg></a>
+						<a href="#" js-linkedin target="_blank"><svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="31.45" height="31.31" viewBox="0 0 31.45 31.31">
+  <g id="Grupo_44" data-name="Grupo 44" transform="translate(0 9.688)">
+    <g id="Grupo_43" data-name="Grupo 43">
+      <rect id="Retângulo_49" data-name="Retângulo 49" width="7.033" height="21.622" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_46" data-name="Grupo 46" transform="translate(9.828 9.688)">
+    <g id="Grupo_45" data-name="Grupo 45">
+      <path id="Caminho_12" data-name="Caminho 12" d="M176.362,160.254c-.075-.024-.145-.049-.224-.071-.094-.022-.189-.039-.285-.055a6.3,6.3,0,0,0-1.262-.128c-4.1,0-6.7,2.982-7.558,4.134V160H160v21.622h7.033V169.828s5.315-7.4,7.558-1.966v13.759h7.031V167.031A7.012,7.012,0,0,0,176.362,160.254Z" transform="translate(-160 -160)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_48" data-name="Grupo 48" transform="translate(0 0)">
+    <g id="Grupo_47" data-name="Grupo 47">
+      <ellipse id="Elipse_3" data-name="Elipse 3" cx="3.494" cy="3.355" rx="3.494" ry="3.355" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+</a>
+						<div class="btn-linkedin">
+							<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/in.js" data-rocket-type="text/javascript" defer>lang: pt_BR</script>
+							<script type="IN/Share" data-url="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				
+
+				<div class="editor">
+					<div id="tt-temp-estim">Tempo de leitura: 3 minutos</div><p><span style="font-weight: 400;">O mais novo integrante da sua família é um Dachshund? Então, se prepare para pensar em </span><b>nomes para cachorro salsicha</b><span style="font-weight: 400;"> que sejam criativos, hein? Afinal, o apelido do seu mais novo amigo deve acompanhar a personalidade dele, e se tem uma coisa que essa raça ama é se divertir muito! </span></p>
+<p><a href="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha.jpg"><img decoding="async" class="alignnone size-full wp-image-2449379" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20718%20482'%3E%3C/svg%3E" alt="cachorro salsicha sentado observando" width="718" height="482" data-lazy-srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha-300x201.jpg 300w" data-lazy-sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 1" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha.jpg"><noscript><img decoding="async" class="alignnone size-full wp-image-2449379" src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha.jpg" alt="cachorro salsicha sentado observando" width="718" height="482" srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha-300x201.jpg 300w" sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 1"></noscript></a><br />
+<span style="font-weight: 400;">Para te ajudar com essa tarefa, o blog Petz separou mais de 300 </span><b>nomes para cachorro </b><span style="font-weight: 400;">que são a carinha dessa raça para você se inspirar e pensar em um apelido único e muito especial para o seu mais novo amigo. Então, vamos lá?</span></p>
+<h2>Nomes para cachorro salsicha fêmea</h2>
+<p><span style="font-weight: 400;">Está buscando </span><b>nomes para cachorra fêmea </b><span style="font-weight: 400;">salsichinha? Então, confira algumas opções que separamos a seguir! Eles são tão meigos e alegres quanto as cachorrinhas da raça: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Angel, Alana, Anne, Amy, </span><a href="https://www.petz.com.br/blog/saude-e-cuidados/cachorro-picado-por-abelha/"><span style="font-weight: 400;">Abelinha</span></a><span style="font-weight: 400;">;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Babalu, Babi, Brisa, Bonnie, Boneca;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Cacá, Capitu, Candy, Ceci, Cobby;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Dama, Doly, Diva, Dora, Dori;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Emy, Estrela, Ester, Esmeralda, Estopinha.</span></li>
+</ul>
+<h2>Nomes para cachorro salsicha macho</h2>
+<p><span style="font-weight: 400;">Agora, se o peludo é um menininho, confira algumas opções de </span><b>nomes para cachorro macho </b><span style="font-weight: 400;">que separamos para você se inspirar e escolher o melhor apelido para o seu amigo de quatro patas: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Chris, Jack, Nick, Kevin, Harry;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Will, Denis, Digo, Carloto, Mitch;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Brady, Doug, Tom, Otto, Ron;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ken, Oliver, Aquiles, Miguel, Hank;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Axel, Junior, Dario, Max, Noel.</span></li>
+</ul>
+<h2>Nomes divertidos para cachorro salsicha</h2>
+<p><span style="font-weight: 400;">Na </span><b>lista de nomes para cachorro</b><span style="font-weight: 400;"> salsicha não podem faltar os apelidos divertidos. Somados à carinha fofa que a raça tem, fica uma combinação incrível e muito divertida, assim como o temperamento deles. Confira algumas opções: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Bacon, </span><a href="https://www.petz.com.br/blog/cachorros/alimentacao/cachorro-pode-comer-batata/"><span style="font-weight: 400;">Batata</span></a><span style="font-weight: 400;">, Café, Mocha, Beijinho;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Harry Patas, Sherlock Bones, Bigode, Goku, Bong;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">King Kong, Godzilla, Flash, Whey, Bitcoin;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Chuvisco, Abelha Maia, Lord, Zeus, Mortífero;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Avioneta, Popeye, Bigode, Pumba, Buzz.</span></li>
+</ul>
+<h2>Outras opções de nomes para salsicha</h2>
+<p><span style="font-weight: 400;">Se nenhuma dessas opções combina com o seu amiguinho, então confira mais alguns </span><b>nomes para cachorro pequeno</b><span style="font-weight: 400;"> a seguir. </span></p>
+<p><a href="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2.jpg"><img decoding="async" class="alignnone size-full wp-image-2449380" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20718%20482'%3E%3C/svg%3E" alt="cachorro salsicha de costas andando" width="718" height="482" data-lazy-srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2-300x201.jpg 300w" data-lazy-sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 2" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2.jpg"><noscript><img decoding="async" class="alignnone size-full wp-image-2449380" src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2.jpg" alt="cachorro salsicha de costas andando" width="718" height="482" srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha2-300x201.jpg 300w" sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 2"></noscript></a></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Teobaldo, Tibúrcio, Sebastião, Nemo, Angará;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Aldo, Sultão, Átila, Agostinho, Willy;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Mussum, Caju, Brandon, Cody, Caramelo;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Evan, Melvin, Frances, Gordo, Iker;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Leo, Piris, Rex, Deny, Montes;    </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Deola, Mel, Melany, Doroty, Donna;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Fiona, Fly, Fubá, Lucy, Duda;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Lulu, Luby, Jujuba, Miche, Angy</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Linda, Leka, Frida, Flor, Adele;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Uma, Pequena, Mandy, Morena, Mimi;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Zoe, Mora, Galo, Cristal, Paco;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Isis, Sissi, Blossom, Gismo, Penny;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Toby, Mary, Rafa, Babi, Balu;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Simba, Nala, Scar, Gus, Jolly;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Nina, Mia, Bloom, Capuz, Timmy; </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Peggy, Gim, Jim, Roy, King;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Michael, Kurt, Lenny, Bobby, Justin;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Tz, Pucca, Salem, Oprah, Jano;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Jumbo, Airko, Melina, Adam, Zorro;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Lassie, Snoopy, Scooby, Salsicha, Daphne;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Anúbis, Zombi, Helena, Rin, Sansão;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Úrsula, Ariel, Kent, Luna, Nilo;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Byron, Estela, Luna, Bull, Vilma;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Sirius, Draco, Tim, Hades, Odin;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Shadow, Sombra, Margot, Ghost, Rocco; </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Leonard, Fabrício, Danúbio, Gesonel, Jorel;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Thor, Kyra, Spellman, Goofy, Mozart;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Bartolomeu, Octopus, Speedy, Gandalf, Lince;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Iris, Chefe, Zelda, Asterix, Miley;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Joan, Turco, Skyler, Luke, Lea;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Darth, Chewbacca, Yoda, Batman, Woody;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gastão, Bella, Fera, Lumiere, Careta;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Dengoso, Biscoito, Bolina, Pintada, Magali;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Hina, High, Honey, Lala, Leka;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Lali, Alfafa, Mafalda, Puppy, Panda; </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Chips, Flor, Chica, Chico, Zoe;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Lula Molusco, Letim, Rambo, Zuca, Portuga;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Salsa, Kuka, Kitty, Mily, Keka;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Lulo, Nully, Nutella, Morango, Paçoca;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Puma, Naruto, Omã, Odi, Olinda;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Mully, Muffin, Mila, Mimi, Nina;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Paris, Charlotte, Gucci, Belle, Darcy;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Julieta, Sinfonia, Olympia, Bianca, Carmen;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Afonso, Alcott, Alfredo, Jaque, Romeu;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Edmundo, Franklin, Matise, Fred, Byron; </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Wolfgang, Arthur, Ernesto, Liam, Jasper;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Tibério, Cobalto, Puma, Gatsby, Forrest;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Silvestre, Comissário, Lola, Krun, Muny;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Mani, Jalapeño, Pipo, Pipoca, Gelatina;</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Zazá, Zazu, Xuxa, Vicky, Vitória.</span></li>
+</ul>
+<p><a href="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg"><img decoding="async" class="alignnone size-full wp-image-2449381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20718%20482'%3E%3C/svg%3E" alt="cachorro salsicha no colo do tutor" width="718" height="482" data-lazy-srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3-300x201.jpg 300w" data-lazy-sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 3" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg"><noscript><img decoding="async" class="alignnone size-full wp-image-2449381" src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg" alt="cachorro salsicha no colo do tutor" width="718" height="482" srcset="https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg 718w, https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3-300x201.jpg 300w" sizes="(max-width: 718px) 100vw, 718px" title="Mais de 300 nomes para cachorro salsicha para se inspirar 3"></noscript></a></p>
+<p><span style="font-weight: 400;">Gostou das nossas dicas de nomes para cachorro salsicha? Então não deixe de acompanhar as publicações do Blog </span><a href="https://www.petz.com.br/blog/"><span style="font-weight: 400;">Petz</span> </a><span style="font-weight: 400;">para mais conteúdos como este. E não deixe de comentar aqui qual foi o apelido que você escolheu para o seu companheiro, hein? Vamos adorar saber!</span></p>
+<p><span style="font-weight: 400;">     </span></p>
+				</div>
+				<div class="compartilhe">
+					<h3>Compartilhe:</h3>
+					<div class="social">
+						<a href="https://www.pinterest.com/pin/create/button/?url=https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/&media=https://www.petz.com.br/blog/wp-content/uploads/2021/05/nomes-para-cachorro-salsicha3.jpg&description=Mais de 300 nomes para cachorro salsicha para se inspirar" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="34.134" height="34.142" viewBox="0 0 34.134 34.142">
+  <path id="Caminho_11" data-name="Caminho 11" d="M69.447,91.81a17.017,17.017,0,1,1,2.122.766c.543-1.341,1.161-2.664,1.613-4.041s.744-2.821,1.085-4.152c.293.247.588.509.9.753a5.887,5.887,0,0,0,5.323.934,8.035,8.035,0,0,0,4.8-3.317,12.87,12.87,0,0,0,2.223-9.465,8.909,8.909,0,0,0-5.833-7.324,12.476,12.476,0,0,0-13.585,2.252,9.865,9.865,0,0,0-2.65,10.9,5.131,5.131,0,0,0,2.568,2.8c.626.3.892.176,1.073-.478.013-.049.03-.1.048-.144a2.48,2.48,0,0,0-.351-2.55c-1.125-1.609-.924-3.472-.382-5.257A7.941,7.941,0,0,1,76,67.812a11.668,11.668,0,0,1,2.848.3,5.938,5.938,0,0,1,4.681,5.59,12.978,12.978,0,0,1-1.188,6.492,6.15,6.15,0,0,1-2.075,2.562,3.492,3.492,0,0,1-2.932.567,2.561,2.561,0,0,1-1.921-3.178c.383-1.516.879-3,1.255-4.522a5.994,5.994,0,0,0,.177-1.993,2.211,2.211,0,0,0-3.433-1.742,3.889,3.889,0,0,0-1.878,2.8,6.759,6.759,0,0,0,.264,3.586,1.5,1.5,0,0,1,.035.772c-.715,3.116-1.479,6.222-2.156,9.346a19.905,19.905,0,0,0-.227,2.814C69.436,91.389,69.447,91.571,69.447,91.81Z" transform="translate(-59.185 -59.144)" fill="#fff"/>
+</svg>
+</a>
+						<a href="https://api.whatsapp.com/send?text=Mais de 300 nomes para cachorro salsicha para se inspirar - https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/" target="_blank"><svg id="whatsapp" xmlns="http://www.w3.org/2000/svg" width="30.215" height="30.215" viewBox="0 0 30.215 30.215">
+  <g id="Grupo_42" data-name="Grupo 42">
+    <path id="Caminho_10" data-name="Caminho 10" d="M15.111,0H15.1A15.1,15.1,0,0,0,2.876,23.962L.993,29.575,6.8,27.718A15.1,15.1,0,1,0,15.111,0ZM23.9,21.334a4.263,4.263,0,0,1-2.965,2.132c-.789.168-1.82.3-5.291-1.137-4.44-1.839-7.3-6.351-7.522-6.643A8.628,8.628,0,0,1,6.33,11.129,4.823,4.823,0,0,1,7.875,7.452,2.195,2.195,0,0,1,9.419,6.91c.187,0,.355.009.506.017.444.019.667.045.959.746.364.878,1.252,3.046,1.358,3.269a.9.9,0,0,1,.064.818,2.611,2.611,0,0,1-.489.693c-.223.257-.434.453-.657.729-.2.24-.434.5-.178.94a13.409,13.409,0,0,0,2.451,3.046,11.107,11.107,0,0,0,3.543,2.185.955.955,0,0,0,1.065-.168,18.278,18.278,0,0,0,1.18-1.564.843.843,0,0,1,1.084-.329c.408.142,2.566,1.209,3.01,1.43s.736.329.844.516A3.762,3.762,0,0,1,23.9,21.334Z" fill="#fff"/>
+  </g>
+</svg>
+</a>
+						<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/'),'facebook-dialog','width=626,height=436'); return false;"><svg id="Bold" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg></a>
+						<a href="#" js-linkedin target="_blank"><svg id="linkedin" xmlns="http://www.w3.org/2000/svg" width="31.45" height="31.31" viewBox="0 0 31.45 31.31">
+  <g id="Grupo_44" data-name="Grupo 44" transform="translate(0 9.688)">
+    <g id="Grupo_43" data-name="Grupo 43">
+      <rect id="Retângulo_49" data-name="Retângulo 49" width="7.033" height="21.622" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_46" data-name="Grupo 46" transform="translate(9.828 9.688)">
+    <g id="Grupo_45" data-name="Grupo 45">
+      <path id="Caminho_12" data-name="Caminho 12" d="M176.362,160.254c-.075-.024-.145-.049-.224-.071-.094-.022-.189-.039-.285-.055a6.3,6.3,0,0,0-1.262-.128c-4.1,0-6.7,2.982-7.558,4.134V160H160v21.622h7.033V169.828s5.315-7.4,7.558-1.966v13.759h7.031V167.031A7.012,7.012,0,0,0,176.362,160.254Z" transform="translate(-160 -160)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Grupo_48" data-name="Grupo 48" transform="translate(0 0)">
+    <g id="Grupo_47" data-name="Grupo 47">
+      <ellipse id="Elipse_3" data-name="Elipse 3" cx="3.494" cy="3.355" rx="3.494" ry="3.355" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+</a>
+						<div class="btn-linkedin">
+							<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/in.js" data-rocket-type="text/javascript" defer>lang: pt_BR</script>
+							<script type="IN/Share" data-url="https://www.petz.com.br/blog/cachorros/nomes-para-cachorro-salsicha/"></script>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="autor visible-desktop">
+					<div class="enfeite">
+					  	<img width="99" height="99" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2099%2099'%3E%3C/svg%3E" alt="Enfeite Blog Petz" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-petz-blog.png"><noscript><img width="99" height="99" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-petz-blog.png" alt="Enfeite Blog Petz"></noscript>
+
+					</div>
+					<div class="info">
+						<h4>Petz</h4>
+						<p>Aqui você encontra tudo e um pouco mais sobre o incrível mundo animal e fica por dentro dos cuidados essenciais com seu bichinho de estimação, seja para um cachorro, gato, passarinho, hamster, peixes e muitos outros — ou todos eles!</p>
+					</div>
+				</div>
+				<div class="autor visible-mobile">
+					<div class="top info">
+						<h4>Petz</h4>
+						<div>
+							
+						<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog Petz" class="enfeite"></noscript>
+						</div>
+					</div>
+					<div class="info">
+						<p>Aqui você encontra tudo e um pouco mais sobre o incrível mundo animal e fica por dentro dos cuidados essenciais com seu bichinho de estimação, seja para um cachorro, gato, passarinho, hamster, peixes e muitos outros — ou todos eles!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="comentarios">
+						<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/cachorros/nomes-para-cachorro-salsicha/#respond" style="display:none;">Cancelar resposta</a></small></h3><form action="https://www.petz.com.br/blog/comments/" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">O seu endereço de e-mail não será publicado.</span> <span class="required-field-message">Campos obrigatórios são marcados com <span class="required">*</span></span></p><div class="inverter"><div class="item"><textarea name="comment" placeholder="comentário" required></textarea></div><div class="box-item"><div class="item"><input type="text" name="author" placeholder="nome*" required></div>
+<div class="item"><input type="email" name="email" placeholder="e-mail*" required></div></div></div>
+
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Salvar meus dados neste navegador para a próxima vez que eu comentar.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="comentar" /> <input type='hidden' name='comment_post_ID' value='2449378' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div>
+	
+
+	
+				</div>
+			</div>
+		</div>
+		<div class="row visible-desktop col-lg-10 offset-lg-1">
+			<div class="advanced-ads superbanner"><div class="advads-super-banner-home" style="text-align: center; " id="advads-1468716432"><div data-advads-trackid="2468073" data-advads-trackbid="1" class="advads-target" id="advads-220330684"><a data-no-instant="1" href="https://www.petz.com.br/colecao/BL-ibasa?utm_source=egb&#038;utm_medium=ireader&#038;utm_campaign=P202306511-20230621_Ibasa_K43_0900" rel="noopener sponsored" class="adv-link" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20728%2090'%3E%3C/svg%3E" alt=""  width="728" height="90"   data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2023/09/png-transparent-2023-happy-new-year-thumbnail.jpg" /><noscript><img src="https://www.petz.com.br/blog/wp-content/uploads/2023/09/png-transparent-2023-happy-new-year-thumbnail.jpg" alt=""  width="728" height="90"   /></noscript></a></div></div></div>
+			
+			
+		</div>
+
+
+	</div>
+
+	<div class="container">
+
+		<div class="relacionados">
+			<h2>Você também pode gostar</h2>
+			<div class="paginacao-relacionados">
+				<div class="prev">
+					<svg id="right-arrow" xmlns="http://www.w3.org/2000/svg" width="10.725" height="18.255" viewBox="0 0 10.725 18.255">
+						<g id="Grupo_8" data-name="Grupo 8">
+							<path id="Caminho_9" data-name="Caminho 9" d="M111.911,8.415,103.788.292a1,1,0,0,0-1.412,0l-.6.6a1,1,0,0,0,0,1.412L108.6,9.124l-6.829,6.829a1,1,0,0,0,0,1.412l.6.6a1,1,0,0,0,1.412,0l8.131-8.131a1.008,1.008,0,0,0,0-1.417Z" transform="translate(-101.478)" fill="#fff"/>
+						</g>
+					</svg>
+				</div>
+				<div class="next">
+					<svg id="right-arrow" xmlns="http://www.w3.org/2000/svg" width="10.725" height="18.255" viewBox="0 0 10.725 18.255">
+						<g id="Grupo_8" data-name="Grupo 8">
+							<path id="Caminho_9" data-name="Caminho 9" d="M111.911,8.415,103.788.292a1,1,0,0,0-1.412,0l-.6.6a1,1,0,0,0,0,1.412L108.6,9.124l-6.829,6.829a1,1,0,0,0,0,1.412l.6.6a1,1,0,0,0,1.412,0l8.131-8.131a1.008,1.008,0,0,0,0-1.417Z" transform="translate(-101.478)" fill="#fff"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<div class="swiper-single">
+
+				
+					<a href="https://www.petz.com.br/blog/plantas/o-que-e-cochonilha/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Plantas</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="O que é cochonilha? Saiba mais sobre esse inseto que pode atrapalhar a sua horta" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2023/01/o-que-e-cochonilha2-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2023/01/o-que-e-cochonilha2-300x201.jpg" alt="O que é cochonilha? Saiba mais sobre esse inseto que pode atrapalhar a sua horta"></noscript>
+						</div>
+						<h3>O que é cochonilha? Saiba mais sobre esse inseto que pode atrapalhar a sua horta</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/plantas/plantas-trepadeiras/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Plantas</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="Plantas trepadeiras: conheça as mais lindas!" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2022/08/plantas-trepadeiras-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2022/08/plantas-trepadeiras-300x201.jpg" alt="Plantas trepadeiras: conheça as mais lindas!"></noscript>
+						</div>
+						<h3>Plantas trepadeiras: conheça as mais lindas!</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/curiosidades/animais-com-a-letra-a/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Animais Silvestres</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="Animais com a letra a: não perca mais no “Stop”!" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2023/01/animais-com-a-letra-a-topo-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2023/01/animais-com-a-letra-a-topo-300x201.jpg" alt="Animais com a letra a: não perca mais no “Stop”!"></noscript>
+						</div>
+						<h3>Animais com a letra a: não perca mais no “Stop”!</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/comportamento/poodle-e-bravo-saiba-mais-sobre-o-temperamento-dessa-raca/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Comportamento</div>
+							<img width="300" height="200" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20200'%3E%3C/svg%3E" alt="Poodle é bravo? Saiba mais sobre o temperamento dessa raça" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-cachorro-poodle-300x200.jpg"><noscript><img width="300" height="200" src="https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-cachorro-poodle-300x200.jpg" alt="Poodle é bravo? Saiba mais sobre o temperamento dessa raça"></noscript>
+						</div>
+						<h3>Poodle é bravo? Saiba mais sobre o temperamento dessa raça</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/cachorros/saude-e-cuidados-cachorros/aprenda-como-adestrar-pastor-alemao/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Saúde e Cuidados de Cachorros</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="Aprenda como adestrar Pastor Alemão!" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2022/07/curiosidades-sobre-pastor-alemao2-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2022/07/curiosidades-sobre-pastor-alemao2-300x201.jpg" alt="Aprenda como adestrar Pastor Alemão!"></noscript>
+						</div>
+						<h3>Aprenda como adestrar Pastor Alemão!</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/pets/gatos/meus-gatos-estao-brincando-ou-brigando/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #ff6096">Gatos</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="Meus gatos estão brincando ou brigando? Tire essa dúvida já!" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2022/09/como-socializar-gatos-com-outros-gatos-3-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2022/09/como-socializar-gatos-com-outros-gatos-3-300x201.jpg" alt="Meus gatos estão brincando ou brigando? Tire essa dúvida já!"></noscript>
+						</div>
+						<h3>Meus gatos estão brincando ou brigando? Tire essa dúvida já!</h3>
+					</a>
+
+
+				
+					<a href="https://www.petz.com.br/blog/racas/poodle-e-inteligente/" class="post-relacionado swiper-slide">
+						<div class="img">
+							
+							<img width="52" height="52" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2052%2052'%3E%3C/svg%3E" alt="Enfeite Blog da Petz" class="enfeite" data-lazy-src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png"><noscript><img width="52" height="52" src="https://www.petz.com.br/blog/themes/8cdeff5756/images/icon-enfeite.png" alt="Enfeite Blog da Petz" class="enfeite"></noscript>
+							<div class="cat" style="background-color: #00A0E4">Cães Raças</div>
+							<img width="300" height="201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20201'%3E%3C/svg%3E" alt="Saiba se o cão da raça Poodle é inteligente!" data-lazy-src="https://www.petz.com.br/blog/wp-content/uploads/2020/05/poodle-tamanhos-2-300x201.jpg"><noscript><img width="300" height="201" src="https://www.petz.com.br/blog/wp-content/uploads/2020/05/poodle-tamanhos-2-300x201.jpg" alt="Saiba se o cão da raça Poodle é inteligente!"></noscript>
+						</div>
+						<h3>Saiba se o cão da raça Poodle é inteligente!</h3>
+					</a>
+
+
+				
+			</div>
+
+		</div>
+
+		
+	</div>
+
+</main>
+
+
+<footer>
+	<div class="container">
+		<div class="social-box">
+			<div class="social">
+				<a href="https://www.instagram.com/petz/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Grupo_118" data-name="Grupo 118" transform="translate(0 0.132)">
+    <rect id="Retângulo_80" data-name="Retângulo 80" width="32" height="32" rx="5" transform="translate(0 -0.132)" fill="#5b5b5b"/>
+    <g id="instagram" transform="translate(3.59 3.59)">
+      <path id="Caminho_19" data-name="Caminho 19" d="M25.485,7.381A9.174,9.174,0,0,0,24.9,4.335,6.431,6.431,0,0,0,21.228.662,9.2,9.2,0,0,0,18.183.079C16.839.015,16.412,0,13,0S9.169.015,7.83.074A9.176,9.176,0,0,0,4.784.657,6.126,6.126,0,0,0,2.557,2.109,6.181,6.181,0,0,0,1.111,4.331,9.2,9.2,0,0,0,.527,7.376C.463,8.72.449,9.147.449,12.555s.015,3.835.074,5.174a9.173,9.173,0,0,0,.584,3.046,6.43,6.43,0,0,0,3.673,3.673,9.2,9.2,0,0,0,3.046.584c1.339.059,1.766.074,5.174.074s3.835-.015,5.174-.074a9.171,9.171,0,0,0,3.045-.584,6.421,6.421,0,0,0,3.673-3.673,9.2,9.2,0,0,0,.584-3.046c.059-1.339.074-1.766.074-5.174s0-3.835-.064-5.174Zm-2.261,10.25a6.881,6.881,0,0,1-.432,2.33,4.165,4.165,0,0,1-2.384,2.384,6.906,6.906,0,0,1-2.33.431c-1.324.059-1.721.074-5.071.074s-3.752-.015-5.071-.074a6.878,6.878,0,0,1-2.33-.431,3.863,3.863,0,0,1-1.442-.937,3.9,3.9,0,0,1-.937-1.442,6.907,6.907,0,0,1-.431-2.33c-.059-1.324-.074-1.721-.074-5.071s.015-3.752.074-5.071a6.878,6.878,0,0,1,.431-2.33,3.816,3.816,0,0,1,.942-1.442,3.9,3.9,0,0,1,1.442-.937,6.91,6.91,0,0,1,2.33-.432c1.324-.059,1.722-.074,5.071-.074s3.752.015,5.071.074a6.881,6.881,0,0,1,2.33.432,3.86,3.86,0,0,1,1.442.937,3.9,3.9,0,0,1,.937,1.442,6.909,6.909,0,0,1,.432,2.33c.059,1.324.074,1.721.074,5.071s-.015,3.742-.074,5.066Zm0,0" transform="translate(-0.449 0)" fill="#eee"/>
+      <path id="Caminho_20" data-name="Caminho 20" d="M131.4,124.5a6.449,6.449,0,1,0,6.449,6.449A6.451,6.451,0,0,0,131.4,124.5Zm0,10.633a4.183,4.183,0,1,1,4.183-4.183A4.184,4.184,0,0,1,131.4,135.133Zm0,0" transform="translate(-118.843 -118.394)" fill="#eee"/>
+      <path id="Caminho_21" data-name="Caminho 21" d="M365.461,90.107a1.506,1.506,0,1,1-1.506-1.506A1.506,1.506,0,0,1,365.461,90.107Zm0,0" transform="translate(-344.696 -84.256)" fill="#eee"/>
+    </g>
+  </g>
+</svg>
+</a>
+				<a href="https://www.youtube.com/petztube" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="19.974" height="18" viewBox="0 0 19.974 18">
+  <path id="youtube" d="M19.563-3.265A2.954,2.954,0,0,0,17.8-5.532c-1.563-.55-7.815-.55-7.815-.55s-6.252,0-7.815.53A3.022,3.022,0,0,0,.412-3.265,43.487,43.487,0,0,0,0,2.918,43.326,43.326,0,0,0,.412,9.1a2.954,2.954,0,0,0,1.761,2.266c1.579.551,7.815.551,7.815.551s6.252,0,7.815-.53a2.954,2.954,0,0,0,1.761-2.266,43.5,43.5,0,0,0,.411-6.183,41.278,41.278,0,0,0-.411-6.2ZM8,6.772V-.936l5.2,3.854Zm0,0" transform="translate(-0.001 6.082)" fill="#5b5b5b"/>
+</svg>
+</a>
+				<a href="https://www.facebook.com/petzbr" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18.167" height="18.167" viewBox="0 0 18.167 18.167">
+  <g id="Grupo_117" data-name="Grupo 117" transform="translate(3 -1.23)">
+    <path id="facebook" d="M15.506,0H2.661A2.664,2.664,0,0,0,0,2.661V15.506a2.664,2.664,0,0,0,2.661,2.661H8.019V11.744H5.89V8.551H8.019V6.387a3.2,3.2,0,0,1,3.193-3.193h3.229V6.387H11.212V8.551h3.229l-.532,3.193h-2.7v6.422h4.293a2.664,2.664,0,0,0,2.661-2.661V2.661A2.664,2.664,0,0,0,15.506,0Zm0,0" transform="translate(-3 1.23)" fill="#5b5b5b"/>
+  </g>
+</svg>
+</a>
+			</div>
+		</div>
+		<div class="grid-rodape">
+			<div class="item">
+				<h3>PRODUTOS PARA CACHORRO
+					<div class="visible-mobile">
+						<svg id="Grupo_8" data-name="Grupo 8" xmlns="http://www.w3.org/2000/svg" width="8.374" height="14.254" viewBox="0 0 8.374 14.254">
+							<path id="Caminho_9" data-name="Caminho 9" d="M109.625,6.571,103.282.228a.781.781,0,0,0-1.1,0l-.467.467a.781.781,0,0,0,0,1.1l5.327,5.327-5.333,5.333a.782.782,0,0,0,0,1.1l.467.467a.781.781,0,0,0,1.1,0l6.349-6.349a.787.787,0,0,0,0-1.107Z" transform="translate(-101.478)" fill="#262626"/>
+						</svg>
+					</div>
+				</h3>
+				<ul>
+					<li><a href="https://www.petz.com.br/cachorro/racao/racao-seca" target="_blank">Ração seca</a></li>
+					<li><a href="https://www.petz.com.br/cachorro/racao/racao-umida" target="_blank">Ração úmida</a></li>
+					<li><a href="https://www.petz.com.br/cachorro/farmacia" target="_blank">Medicamentos</a></li>
+					<li><a href="https://www.petz.com.br/cachorro/tapetes-fraldas-e-banheiros" target="_blank">Tapete higiênico</a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<h3>PRODUTOS PARA GATO
+					<div class="visible-mobile">
+						<svg id="Grupo_8" data-name="Grupo 8" xmlns="http://www.w3.org/2000/svg" width="8.374" height="14.254" viewBox="0 0 8.374 14.254">
+							<path id="Caminho_9" data-name="Caminho 9" d="M109.625,6.571,103.282.228a.781.781,0,0,0-1.1,0l-.467.467a.781.781,0,0,0,0,1.1l5.327,5.327-5.333,5.333a.782.782,0,0,0,0,1.1l.467.467a.781.781,0,0,0,1.1,0l6.349-6.349a.787.787,0,0,0,0-1.107Z" transform="translate(-101.478)" fill="#262626"/>
+						</svg>
+					</div>
+				</h3>
+				
+				<ul>
+					<li><a href="https://www.petz.com.br/gato/racao/racao-seca" target="_blank">Ração seca</a></li>
+					<li><a href="https://www.petz.com.br/gato/racao/racao-umida" target="_blank">Ração úmida</a></li>
+					<li><a href="https://www.petz.com.br/gato/farmacia/antipulgas-e-carrapatos" target="_blank">Antipulgas</a></li>
+					<li><a href="https://www.petz.com.br/gato/areias-e-banheiros/banheiros" target="_blank">Caixa de areia</a></li>
+				</ul>
+			</div>
+
+			<div class="item">
+				<h3>PRODUTOS PARA OUTROS PETS
+					<div class="visible-mobile">
+						<svg id="Grupo_8" data-name="Grupo 8" xmlns="http://www.w3.org/2000/svg" width="8.374" height="14.254" viewBox="0 0 8.374 14.254">
+							<path id="Caminho_9" data-name="Caminho 9" d="M109.625,6.571,103.282.228a.781.781,0,0,0-1.1,0l-.467.467a.781.781,0,0,0,0,1.1l5.327,5.327-5.333,5.333a.782.782,0,0,0,0,1.1l.467.467a.781.781,0,0,0,1.1,0l6.349-6.349a.787.787,0,0,0,0-1.107Z" transform="translate(-101.478)" fill="#262626"/>
+						</svg>
+					</div>
+				</h3>
+				<ul>
+					<li><a href="https://www.petz.com.br/outros-pets/coelhos/racao" target="_blank">Ração para hamster</a></li>
+					<li><a href="https://www.petz.com.br/passaros/alimentacao" target="_blank">Ração para pássaros</a></li>
+					<li><a href="https://www.petz.com.br/peixes/alimentacao/alimento-base" target="_blank">Ração para peixes</a></li>
+					<li><a href="https://www.petz.com.br/outros-pets/tartarugas/racao" target="_blank">Ração para tartaruga</a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul class="mostrar">
+					<li><a href="https://www.petz.com.br/">petz.com.br</a></li>
+					<li><a href="https://www.petz.com.br/nossas-lojas">Nossas lojas</a></li>
+					<li><a href="https://www.petz.com.br/atendimento-inteligente/">Atendimento</a></li>
+					<li><a href="https://www.petz.com.br/black-friday/">Black friday petz</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="copy">
+			<span>Copyright ©2023 www.petz.com.br/blog é uma iniciativa da Petz®</span><br>
+			Powered by <a href="https://gearseo.com.br" target="_blank">Agência Especializada em SEO</a>
+		</div>
+	</div>
+</footer>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/plugins/bb2c182b2b/vendor/slick/slick.min.js' id='slick-min-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/makestories-helper/assets/js/ms-script.js' id='script-main-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/player/StoryPlayer.js' id='ms-story-player-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/js/isotope.pkgd.js' id='isotope-pkgd-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/js/gl_isotope.js' id='gl_isotope-pkgd-js' defer></script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/wp-content/plugins/c4ecc5b180/options/theme/js/jquery.shuffle.min.js' id='jquery-shuffle-min-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/js/script.js' id='script2-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/plugins/weblizar-pinterest-feeds/options/theme/js/custom.js' id='custom-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.petz.com.br/blog/wp-content/plugins/c4ecc5b180/options/js/bootstrap.min.js' id='weblizar-bootjs-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/|\/linkout\/.+","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.petz.com.br\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='advanced-ads-pro/front-js-extra'>
+/* <![CDATA[ */
+var advadsCfpInfo = {"cfpExpHours":"3","cfpClickLimit":"3","cfpBan":"7","cfpPath":"https:\/\/www.petz.com.br\/blog","cfpDomain":"blog.petz.com.br"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/wp-content/plugins/advanced-ads-pro/assets/js/advanced-ads-pro.min.js' id='advanced-ads-pro/front-js'></script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>
+/* <![CDATA[ */
+var advanced_ads_pro_ajax_object = {"ajax_url":"https:\/\/www.petz.com.br\/blog\/ajax-petz","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"-10800"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/wp-content/plugins/advanced-ads-pro/assets/js/base.min.js' id='advanced-ads-pro/cache_busting-js'></script>
+<script type='text/javascript' id='advadsTrackingScript-js-extra'>
+/* <![CDATA[ */
+var advadsTracking = {"impressionActionName":"aatrack-records","clickActionName":"aatrack-click","targetClass":"advads-target","blogId":"1","frontendPrefix":"advads-"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.petz.com.br/blog/wp-content/plugins/advanced-ads-tracking/public/assets/js/dist/tracking.min.js' id='advadsTrackingScript-js'></script>
+<script type="rocketlazyloadscript">window.advads_admin_bar_items = [{"title":"Super banner - Home","type":"placement"},{"title":"23_05_02_Importadora Bage \u2013 Ibasa \u2013 Super Banner","type":"ad"},{"title":"Super Banner","type":"group"}];</script><script>window.advads_has_ads = [["2468073","ad","23_05_02_Importadora Bage \u2013 Ibasa \u2013 Super Banner","off"]];
+( window.advanced_ads_ready || jQuery( document ).ready ).call( null, function() {if ( !window.advanced_ads_pro ) {console.log("Advanced Ads Pro: cache-busting can not be initialized");} });</script><script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><script id="advads-tracking">var advads_tracking_ads = {"1":[2468073]};var advads_tracking_urls = {"1":"https:\/\/www.petz.com.br\/blog\/wp-content\/ajax-handler.php"};var advads_tracking_methods = {"1":"frontend"};var advads_tracking_parallel = {"1":false};var advads_tracking_linkbases = {"1":"https:\/\/www.petz.com.br\/blog\/linkout\/"};</script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.petz.com.br/blog/wp-content/plugins/ffee7df689/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/themes/petz/js/plugins.js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/blog/wp-content/themes/petz/js/main.js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var ajax_request_url = "https://www.petz.com.br/blog/ajax-petz"</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cdc8fc4c06","applicationID":"1364726241","transactionName":"NVNSZRNQXEZZB0RbDQwZZUMIHltbXAFIHBIKRg==","queueTime":0,"applicationTime":3,"atts":"GRRRE1tKT0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.petz.com.br/blog/wp-content/cache/min/1/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script type="rocketlazyloadscript">
+	$('.swiper-single').slick({
+		dots: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		prevArrow: $('.prev'),
+		nextArrow: $('.next'),
+		responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				infinite: true,
+				dots: true
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
+});
+</script>
+
+<!-- Cached for great performance - Debug: cached@1695368756 -->
