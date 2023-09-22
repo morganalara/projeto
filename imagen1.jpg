@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset=utf-8>
+	<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"cdc8fc4c06",applicationID:"1364726241"};;/*! For license information please see nr-loader-rum-1.241.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={5763:(e,t,n)=>{n.d(t,{P_:()=>g,Mt:()=>h,C5:()=>s,DL:()=>b,OP:()=>E,lF:()=>k,Yu:()=>w,Dg:()=>p,CX:()=>c,GE:()=>y,sU:()=>j});var r=n(8632),i=n(9567);const a={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},o={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!o[e])throw new Error("Info for ".concat(e," was never set"));return o[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");o[e]=(0,i.D)(t,a),(0,r.Qy)(e,o[e],"info")}var u=n(7056);const d=()=>{const e={block_selector:"[data-nr-block]",mask_input_options:{password:!0}};return{proxy:{assets:void 0,beacon:void 0},privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:u.oD,inactiveMs:u.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},metrics:{enabled:!0,autoStart:!0},page_action:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1,autoStart:!0},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},harvest:{tooManyRequestsDelay:60},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,sampling_rate:50,error_sampling_rate:50,mask_text_selector:"*",mask_all_inputs:!0,get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){e.block_selector+=",".concat(t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){e.mask_input_options={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0}}},l={},f="All configuration objects require an agent identifier!";function g(e){if(!e)throw new Error(f);if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function p(e,t){if(!e)throw new Error(f);l[e]=(0,i.D)(t,d()),(0,r.Qy)(e,l[e],"config")}function h(e,t){if(!e)throw new Error(f);var n=g(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const v={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},m={};function b(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!m[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return m[e]}function y(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");m[e]=(0,i.D)(t,v),(0,r.Qy)(e,m[e],"loader_config")}const w=(0,r.mF)().o;var A=n(385),x=n(6818);const _={buildEnv:x.Re,customTransaction:void 0,disabled:!1,distMethod:x.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(A._A?.performance?.timeOrigin||A._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+A._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof A._A.XMLHttpRequest?.prototype?.addEventListener,version:x.q4,denyList:void 0},D={};function E(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function j(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,_),(0,r.Qy)(e,D[e],"runtime")}function k(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(n).length?e:n;for(let o in a)if(void 0!==e[o])try{"object"==typeof e[o]&&"object"==typeof t[o]?n[o]=i(e[o],t[o]):n[o]=e[o]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>a,q4:()=>r});const r="1.241.0",i="PROD",a="CDN"},385:(e,t,n)=>{n.d(t,{Nk:()=>d,Tt:()=>s,_A:()=>a,cv:()=>l,iS:()=>o,il:()=>r,ux:()=>c,v6:()=>i,w1:()=>u});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),s=(a?.location,/iPad|iPhone|iPod/.test(a.navigator?.userAgent)),c=s&&"undefined"==typeof SharedWorker,u=((()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Boolean(r&&window.document.documentMode)),d=!!a.navigator?.sendBeacon,l=Math.floor(a?.performance?.timeOrigin||a?.performance?.timing?.navigationStart||Date.now())},1117:(e,t,n)=>{n.d(t,{w:()=>a});var r=n(50);const i={agentIdentifier:"",ee:void 0};class a{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,n)=>{n.d(t,{L:()=>d,R:()=>c});var r=n(8325),i=n(1284),a=n(4322),o=n(3325);const s={};function c(e,t){const n={staged:!1,priority:o.p[t]||0};u(e),s[e].get(t)||s[e].set(t,n)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(u(e),!e||!s[e].get(t))return o(t);s[e].get(t).staged=!0;const n=[...s[e]];function o(t){const n=e?r.ee.get(e):r.ee,o=a.X.handlers;if(n.backlog&&o){var s=n.backlog[t],c=o[t];if(c){for(var u=0;s&&u<s.length;++u)l(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete o[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((t=>{let[n]=t;s[e].delete(n),o(n)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],a=e[3],o=e[2];i.apply(a,o)}}))}},8325:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>u});var r=n(8632),i=n(2210),a=n(5763);class o{constructor(e){this.contextId=e}}var s=n(3117);const c="nr@context:".concat(s.a),u=function e(t,n){var r={},s={},d={},f=!1;try{f=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,a){!1!==a&&(a=!0);if(u.aborted&&!i)return;t&&a&&t.emit(e,n,r);for(var o=p(r),c=v(e),d=c.length,l=0;l<d;l++)c[l].apply(o,n);var f=b()[s[e]];f&&f.push([g,e,n,o]);return o},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof o?e:e?(0,i.X)(e,c,(()=>new o(c))):new o(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return d[t]=d[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),d=(0,r.fP)();function l(){u.aborted=!0,u.backlog={}}d.ee||(d.ee=u)},5546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(8325).ee.get("handle");function i(e,t,n,i,a){a?(a.buffer([e],i),a.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4322:(e,t,n)=>{n.d(t,{X:()=>a});var r=n(5546);a.on=o;var i=a.handlers={};function a(e,t,n,a){o(a||r.E,i,e,t,n)}function o(e,t,n,i,a){a||(a="feature"),e||(e=r.E);var o=t[a]=t[a]||{};(o[n]=o[n]||[]).push([e,i])}},3239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>o});var r=n(385);let i=!1,a=!1;try{const e={get passive(){return i=!0,!1},get signal(){return a=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function o(e,t){return i||a?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,o(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,o(n,r))}},3117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(4402).Rl)()},4402:(e,t,n)=>{n.d(t,{Rl:()=>o,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function a(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?a(t,++n).toString(16):"y"===e?(3&a()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const o=[];for(var s=0;s<e;s++)o.push(a(n,++i).toString(16));return o.join("")}},7056:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>a,oD:()=>i});const r="NRBA",i=144e5,a=18e5},7894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},2587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>u});var r=n(8325),i=n(5546),a=n(3325);const o={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]},s=new Set;function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(s.has(t)||Object.entries(e).forEach((e=>{let[t,r]=e;o[t]?o[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),u[t]=Boolean(r)})),Object.keys(o).forEach((e=>{void 0===u[e]&&(o[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),u[e]=!1)})),s.add(t))}const u={}},2210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},4351:(e,t,n)=>{n.d(t,{P:()=>a});var r=n(8325);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function a(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,n)=>{n.d(t,{K:()=>o,b:()=>a});var r=n(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(i())return e();(0,r.bP)("load",e,t)}function o(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},8632:(e,t,n)=>{n.d(t,{EZ:()=>u,Qy:()=>c,ce:()=>a,fP:()=>o,gG:()=>d,mF:()=>s});var r=n(7894),i=n(385);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function o(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=o();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=o();const a=i.initializedAgents||{},s=a[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...a,[e]:{...s,[n]:t}},i}function u(e,t){o()[e]=t}function d(){return function(){let e=o();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=o();const t=e.init||{};e.init={...t}}(),s(),function(){let e=o();const t=e.loader_config||{};e.loader_config={...t}}(),o()}},7956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),n,i)}},3081:(e,t,n)=>{n.d(t,{gF:()=>a,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>o});const r=n(3325).D.metrics,i="sm",a="cm",o="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewEvent},9251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewTiming},5938:(e,t,n)=>{n.d(t,{W:()=>a});var r=n(5763),i=n(8325);class a{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},7530:(e,t,n)=>{n.d(t,{j:()=>b});var r=n(3325),i=n(5763),a=n(5546),o=n(8325),s=n(7894),c=n(8e3),u=n(3960),d=n(385),l=n(50),f=n(3081),g=n(8632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let a=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&a.push(e.api[t](...r))})),a.length>1?a:a[0]}(t,...r)}}))}var h=n(2587);const v=e=>{n.p=e};let m=!1;function b(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},b=arguments.length>2?arguments[2]:void 0,y=arguments.length>3?arguments[3]:void 0,{init:w,info:A,loader_config:x,runtime:_={loaderType:b},exposed:D=!0}=t;const E=(0,g.gG)();A||(w=E.init,A=E.info,x=E.loader_config),(0,i.Dg)(e,w||{}),(0,i.GE)(e,x||{}),A.jsAttributes??={},d.v6&&(A.jsAttributes.isWorker=!0),(0,i.CX)(e,A);const j=(0,i.P_)(e),k=[A.beacon,A.errorBeacon];m||(m=!0,j.proxy.assets&&(v(j.proxy.assets+"/"),k.push(j.proxy.assets)),j.proxy.beacon&&k.push(j.proxy.beacon)),_.denyList=[...j.ajax.deny_list||[],...j.ajax.block_internal?k:[]],(0,i.sU)(e,_),p();const T=function(e,t){t||(0,c.R)(e,"api");const g={};var p=o.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,a){const o=(0,i.C5)(e);return null===n?delete o.jsAttributes[t]:(0,i.CX)(e,{...o,jsAttributes:{...o.jsAttributes,[t]:n}}),A(v,r,!0,a||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>{g[e]=A(v,e,!0,"api")})),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.start=e=>{try{const t=e?"defined":"undefined";(0,a.p)(f.xS,["API/start/".concat(t,"/called")],void 0,r.D.metrics,p);const n=Object.values(r.D);if(void 0===e)e=n;else{if((e=Array.isArray(e)&&e.length?e:[e]).some((e=>!n.includes(e))))return(0,l.Z)("Invalid feature name supplied. Acceptable feature names are: ".concat(n));e.includes(r.D.pageViewEvent)||e.push(r.D.pageViewEvent)}e.forEach((e=>{p.emit("".concat(e,"-opt-in"))}))}catch(e){(0,l.Z)("An unexpected issue occurred",e)}},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,o="function"==typeof t;return(0,a.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((o?"":"no-")+"fn-start",[(0,s.z)(),i,o],n),o)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,a.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,a.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,7438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,a.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,a.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},d.il?(0,u.b)((()=>x()),!0):x(),g}(e,y);return(0,g.Qy)(e,T,"api"),(0,g.Qy)(e,D,"exposed"),(0,g.EZ)("activatedFeatures",h.T),T}},3325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var a=r[e]={exports:{}};return n[e](a,a.exports,i),a.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum-1.241.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.241.0.PROD:",i.l=(n,r,a,o)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==a)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+a){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+a),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var a=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=a);var o=i.p+i.u(t),s=new Error;i.l(o,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var a=n&&("load"===n.type?"missing":n.type),o=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+a+": "+o+")",s.name="ChunkLoadError",s.type=a,s.request=o,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,a,[o,s,c]=n,u=0;if(o.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);u<o.length;u++)a=o[u],i.o(e,a)&&e[a]&&e[a][0](),e[a]=0},n=self["webpackChunk:NRBA-1.241.0.PROD"]=self["webpackChunk:NRBA-1.241.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}start(t){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(3325),r=i(5763);const a=Object.values(n.D);function o(e){const t={};return a.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(7530);var c=i(8e3),u=i(5938),d=i(3960),l=i(385);class f extends u.W{constructor(e,t,n){let i=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=i,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===(0,r.Mt)(this.agentIdentifier,"".concat(this.featureName,".autoStart"))&&(this.auto=!1),this.auto&&(0,c.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate)return;if(!this.auto)return void this.ee.on("".concat(this.featureName,"-opt-in"),(()=>{(0,c.R)(this.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator()}));const n=l.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let a;this.onAggregateImported=new Promise((e=>{a=e}));const o=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,3228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,c.L)(this.agentIdentifier,this.featureName),void a(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,8582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),a(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),a(!1)}};l.il?(0,d.b)((()=>o()),!0):o()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var g=i(7633);class p extends f{static featureName=g.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,g.t,n),this.importAggregator()}}var h=i(1117),v=i(1284);class m extends h.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var a=this.getBucket(e,t,n,i);return a.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,v.D)(e,(function(e,n){t[e]=b(n,t[e])})),t}(r,a.metrics),a}merge(e,t,n,r,i){var a=this.getBucket(e,t,r,i);if(a.metrics){var o=a.metrics;o.count+=n.count,(0,v.D)(n,(function(e,t){if("count"!==e){var r=o[e],i=n[e];i&&!i.c?o[e]=b(i.t,r):o[e]=function(e,t){if(!t)return e;t.c||(t=y(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,o[e])}}))}else a.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=b(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=w(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function b(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=y(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function y(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function w(e){return"object"!=typeof e?[]:(0,v.D)(e,A)}function A(e,t){return t}var x=i(8632),_=i(4402),D=i(4351);var E=i(5546),j=i(7956),k=i(3239),T=i(7894),N=i(9251);class S extends f{static featureName=N.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,N.t,n),l.il&&((0,j.N)((()=>(0,E.p)("docHidden",[(0,T.z)()],void 0,N.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,E.p)("winPagehide",[(0,T.z)()],void 0,N.t,this.ee))),this.importAggregator())}}var P=i(3081);class C extends f{static featureName=P.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,_.ky)(16);super(),l._A?(this.agentIdentifier=n,this.sharedAggregator=new m({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(p),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.run()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}run(){const t="features";try{const r=o(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,D.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,x.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,x.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[p,S,C],loaderType:"lite"})})()})();</script> <![endif]-->
+	<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+	<title>Cachorro Dachshund: saiba tudo sobre o salsicha</title>
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+	<link rel=apple-touch-icon sizes=72x72 href=https://cdn-petz-imgs.stoom.com.br/novaLoja/images/icon.png>
+	<link rel=apple-touch-icon sizes=114x114 href=https://cdn-petz-imgs.stoom.com.br/novaLoja/images/icon.png>
+	<link rel=icon type=image/png href=https://cdn-petz-imgs.stoom.com.br/novaLoja/images/icon.png>
+	<link href=https://www.petz.com.br/cachorro/racas/dachshund/css/bootstrap.css rel=stylesheet>
+	<link href=https://www.petz.com.br/cachorro/racas/dachshund/css/geral.css rel=stylesheet>
+	<style type="text/css">
+		html.webp .jumbotron {
+			background: url(img/jumbotron.webp);
+		}
+
+		html .jumbotron {
+			background: url(img/jumbotron.jpg);
+		}
+
+		html.webp .foto-banner {
+			background-image: url('img/dachshund-brincando.webp') !important;
+		}
+
+		html .foto-banner {
+			background-image: url('img/dachshund-brincando.jpg') !important;
+		}
+
+		.meu-breadcrumbs {
+			display: flex !important;
+		}
+
+		.meu-breadcrumbs li {
+			list-style: none !important;
+			font-size: 14px !important;
+		}
+
+		.meu-breadcrumbs li a {
+			font-size: 14px !important;
+		}
+	</style>
+	<meta name=description content="Todas as curiosidades e dicas para se ter um cãozinho desse em casa você irá descobrir aqui na Petz. Confira!">
+	<link rel="canonical" href="https://www.petz.com.br/cachorro/racas/dachshund/" />
+
+	<meta property="og:image" content="img/dachshund-caracteristicas-guia-racas.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script type="text/javascript">
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-58792402-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+<div class=outerMenu>
+	<iframe width=100% height=645 src=https://www.petz.com.br/cabecalho_Loja.html frameborder=0></iframe>
+</div>
+
+<body id=page-top>
+	<div class=slider-container>
+
+		<ul itemscope itemtype=http://schema.org/Breadcrumb class=meu-breadcrumbs>
+			<li>
+				<a href=https://www.petz.com.br/ rel=home itemprop=url>
+					<span itemprop=title>Pet Shop</span>
+				</a> »
+			</li>
+			<li>
+				<a href=https://www.petz.com.br/cachorro itemprop=url>
+					<span itemprop=title>Cachorro</span>
+				</a> »
+			</li>
+			<li>
+				<a href=https://www.petz.com.br/cachorro/racas itemprop=url>
+					<span itemprop=title>Raças</span>
+				</a> »
+			</li>
+			<li>
+				<span itemprop=title>Dachshund</span>
+			</li>
+		</ul>
+		
+		<div class="slider-control left inactive"></div>
+		<div class="slider-control right"></div>
+		<ul class=slider-pagi></ul>
+		<div class=slider>
+			<div class="slide slide-0 active foto-banner">
+				<div class=slide__bg></div>
+				<div class=slide__content>
+					<div class=slide__overlay>
+					</div>
+					<div class=slide__text>
+						<h1 class=slide__text-heading>GUIA DE RAÇAS<br> Dachshund</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<svg id=curveUp xmlns=http://www.w3.org/2000/svg version=1.1 width=100% height=100 viewBox="0 0 100 100" preserveAspectRatio=none fill=#fff>
+		<path d="M0 100 C 20 0 50 0 100 100 Z" />
+	</svg>
+	<section id=services-index>
+		<div class=container>
+			<h2 class=titulo-menu-guia>Neste guia você vai encontrar:</h2>
+			<nav class=menu-guia>
+				<a href=#condicao condicao>Condição Física</a>
+				<a href=#caracteristica>Característica</a>
+				<a href=#destaque>Destaques e Curiosidade</a>
+				<a href=#historia>A História do Dachshund</a>
+				<a href=#personalidade>Personalidade</a>
+				<a href=#saude>Saúde e Bem-Estar</a>
+				<a href=#dicas>Dicas de Adestramento</a>
+				<a href=#produtos>Produtos para o Dachshund</a>
+				<a href=#racas class=ultimo>Raças Relacionadas</a>
+
+			</nav>
+			<div class=section-heading>
+				<h2>O salsicha mais querido e conhecido</h2>
+				<h4>CBKC - Grupo 04</h4>
+				<h5>Dono de diversos apelidos, o Dachshund é um excelente companheiro com raízes de caçador</h5>
+			</div>
+			<div class=text-justify>
+				<p>Inicialmente um cão de caça — que dá origem ao seu nome — o <strong>cachorro Dachshund</strong> atualmente é um excelente parceiro para companhia. Corajosos, os salsichas, como também são conhecidos, são curiosos e podem passar horas entretidos se começarem a farejar algo interessante, fazendo jus a sua origem.</p>
+				<p>Além de diversos apelidos, para tutores que estão interessados em adotar um cãozinho desse na família, é importante saber quais das três opções de tamanho (Kaninchen, Miniatura e Padrão) ou pelagem (pelo curto, pelo duro e pelo longo) há maior compatibilidade com a rotina familiar. </p>
+				<div class="section-heading text-center margin-1" id=condicao>
+					<h3>Condição física</h3>
+				</div>
+				<p>Os Dachshunds são cachorros enérgicos e adoram gastar sua energia procurado novos alvos para caçar ou se divertir com o seu tutor. Portanto, para que ele não acabe tendo sobrepeso por ficar muito tempo parado, é importante realizar atividades físicas com o pet.</p>
+				<p>Desde passeios ou até mesmo, se for possível, um espaço para que ele possa correr livremente sem riscos. Além disso, eles são animais que adoram a presença de pessoas e não costumam se dar muito bem com a solidão. </p>
+				<div class=info-patas>
+					<div>
+						<h2>Expectativa de Vida</h2>
+					</div>
+					<div><img src="img/dachshund-expectativa-de-vida.webp" data-img="img/dachshund-expectativa-de-vida.png" data-webp="img/dachshund-expectativa-de-vida.webp" alt="Expectativa de Vida do Dachshund" /></div>
+				</div>
+				<div class=info-patas>
+					<div>
+						<h2>Média de Altura</h2>
+					</div>
+					<div><img src="img/dachshund-altura.webp" data-img="img/dachshund-altura.png" data-webp="img/dachshund-altura.webp" alt="Média de altura do Dachshund"></div>
+				</div>
+				<div class=info-patas>
+					<div>
+						<h2>Média de Peso</h2>
+					</div>
+					<div><img src="img/dachshund-peso.webp" data-img="img/dachshund-peso.png" data-webp="img/dachshund-peso.webp" alt="Média de peso do Dachshund"></div>
+				</div>
+				<div class=info-patas>
+					<div>
+						<h2>Nível de Fofura</h2>
+					</div>
+					<div><img src="img/dachshund-fofura.webp" data-img="img/dachshund-fofura.png" data-webp="img/dachshund-fofura.webp" alt="Nível de fofura do Dachshund"></div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="section-heading text-center margin-4" id=caracteristica>
+					<h2>Características</h2>
+				</div>
+				<div class=quadro_classificacoes>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É adaptável?</h3>
+						<div class="img-classificacao estrelas cinco-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Requer atenção?</h3>
+						<div class="img-classificacao estrelas cinco-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Apartamento?</h3>
+						<div class="img-classificacao estrelas quatro-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Late muito?</h3>
+						<div class="img-classificacao estrelas cinco-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Gosta de gatos?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Gosta de crianças?</h3>
+						<div class="img-classificacao estrelas duas-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Gosta de cães?</h3>
+						<div class="img-classificacao estrelas duas-estrelas"></div>
+					</div>
+				</div>
+				<div class=quadro_classificacoes>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Precisa exercitar?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É espaçoso?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Fácil tosar?</h3>
+						<div class="img-classificacao estrelas tosa-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Problemas saúde?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É inteligente?</h3>
+						<div class="img-classificacao estrelas quatro-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Gosta de brincar?</h3>
+						<div class="img-classificacao estrelas cinco-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Cai muito pelo?</h3>
+						<div class="img-classificacao estrelas uma-estrelas"></div>
+					</div>
+				</div>
+				<div class=quadro_classificacoes>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É sociável?</h3>
+						<div class="img-classificacao estrelas quatro-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É amigavel?</h3>
+						<div class="img-classificacao estrelas duas-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É territorialista?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>Fácil de treinar?</h3>
+						<div class="img-classificacao estrelas duas-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É cão de guarda?</h3>
+						<div class="img-classificacao estrelas cinco-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É friorento?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+					<div class=classificacoes>
+						<h3 class=titulo-classificacao>É calorento?</h3>
+						<div class="img-classificacao estrelas tres-estrelas"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class=section-heading >
+					<h2>Rações para Dachshund</h2>
+				</div>
+				<div class="container-fluid bg-pattern margin1 text-center cta_produtos" data-bottom-top="background-position: 0px 70%,99% 70%;" data-top-bottom="background-position: 0px -50%,99% -50%;">
+					<div class=row>
+						<div class="col-md-10 col-md-offset-1">
+							<div id=owl-sample1 class=owl-carousel>
+								<div class=col-sm-12>
+									<div class=image> <img src="img/royal-canin-dachshund.png" data-img="img/royal-canin-dachshund.png" data-webp="img/royal-canin-dachshund.webp" alt="Ração Royal Canin Daschshund - Cães Adultos" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-adultos" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Ração Royal Canin Daschshund - Cães Adultos</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-adultos" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Comprar</a>
+								</div>
+								<div class=col-sm-12>
+									<div class=image><img src="img/royal-canin-filhotes-dachshund.png" data-img="img/royal-canin-filhotes-dachshund.png" data-webp="img/royal-canin-filhotes-dachshund.webp" alt="Ração Royal Canin Daschshund - Cães Filhotes" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-filhotes?semestoque=true" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Ração Royal Canin Daschshund - Cães Filhotes</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-filhotes?semestoque=true" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Comprar</a>
+								</div>
+								<div class=col-sm-12>
+									<div class=image><img src="img/golden-formula-dachshund.png" data-img="img/golden-formula-dachshund.png" data-webp="img/golden-formula-dachshund.webp" alt="Ração Golden Fórmula Mini Bits Para Cães Filhotes Raças Pequenas Sabor Carne e Arroz" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-golden-formula-mini-bits-para-caes-filhotes-racas-pequenas-sabor-carne-e-arroz-95489" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Ração Golden Fórmula Mini Bits Para Cães Filhotes Raças Pequenas Sabor Carne e Arroz</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-golden-formula-mini-bits-para-caes-filhotes-racas-pequenas-sabor-carne-e-arroz-95489" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Comprar</a>
+								</div>
+
+								<div class=col-sm-12>
+									<div class=image><img src="img/premier-adultos-dachshund.png" data-img="img/premier-adultos-dachshund.png" data-webp="img/premier-adultos-dachshund.webp" alt="Ração Premier Fórmula para Cães Adultos de Raças Pequenas Sabor Frango" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-premier-formula-para-caes-adultos-de-racas-pequenas-sabor-frango-71317" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Ração Premier Fórmula para Cães Adultos de Raças Pequenas Sabor Frango</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-premier-formula-para-caes-adultos-de-racas-pequenas-sabor-frango-71317" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Comprar</a>
+								</div>
+								<div class=col-sm-12>
+									<div class=image><img src="img/dog-chow-dachshund.png" data-img="img/dog-chow-dachshund.png" data-webp="img/dog-chow-dachshund.webp" alt="Ração Úmida Dog Chow Sachê para Cães Adultos de Raças Pequenas sabor Cordeiro 100g" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-umida-dog-chow-sache-para-caes-adultos-de-racas-pequenas-sabor-cordeiro-100g-107562" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Ração Úmida Dog Chow Sachê para Cães Adultos de Raças Pequenas sabor Cordeiro 100g</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-umida-dog-chow-sache-para-caes-adultos-de-racas-pequenas-sabor-cordeiro-100g-107562" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Comprar</a>
+								</div>
+								<div class=col-sm-12>
+									<div class=image> <img src="img/purina-adultos-dachshund.png" data-img="img/purina-adultos-dachshund.png" data-webp="img/purina-adultos-dachshund.webp" alt="Ração Excellent para Cães Adultos de Raças Pequenas Sabor Frango e Arroz" class="img-circle img-responsive"></div>
+									<p><a href="https://www.petz.com.br/produto/racao-excellent-para-caes-adultos-de-racas-pequenas-sabor-frango-e-arroz-2kg-107313" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Ração Excellent para Cães Adultos de Raças Pequenas Sabor Frango e Arroz</a></p>
+									<a class=btn href="https://www.petz.com.br/produto/racao-excellent-para-caes-adultos-de-racas-pequenas-sabor-frango-e-arroz-2kg-107313" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Comprar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section id=about-index class=bg-lightcolor1>
+			<div class=container>
+				<div class="section-heading text-center margin-2" id=destaque>
+					<h2>Destaques e curiosidades</h2>
+				</div>
+				<div class=row>
+					<div class="col-md-6 col-lg-7 text-center">
+						<p>O Dachshund é uma raça com muitas variedades. Além das três opções de tamanhos e de pelagem, esses pets possuem uma vasta lista de nomes e apelidos. No Brasil, ele ficou conhecido como Salsicha ou Cofap. Já lá fora, ele também é chamado de Dackel ou Teckel.</p>
+						<div class=panel-group id=accordion>
+							<div class=panel>
+								<div class=panel-heading>
+									<h5 class=panel-title><a class=accordion-toggle data-toggle=collapse data-parent=#accordion href=#collapseOne>Estrela publicitária</a></h5>
+								</div>
+								<div id=collapseOne class="panel-collapse collapse in">
+									<div class=panel-body>
+										<p>O apelido Basset Cofap possui uma história curiosa. No início dos anos 90, quando a raça começava a ficar conhecida aqui, um Salsichinha estrelava comerciais publicitários da marca de amortecedor Cofap, o que resultou no início da popularidade dele por aqui.</p>
+									</div>
+								</div>
+							</div>
+							<div class=panel>
+								<div class=panel-heading>
+									<h5 class=panel-title><a class="accordion-toggle collapsed" data-toggle=collapse data-parent=#accordion href=#collapseTwo>Um cão olímpico</a></h5>
+								</div>
+								<div id=collapseTwo class="panel-collapse collapse">
+									<div class=panel-body>
+										<p>Aconteceu nos Jogos Olímpicos de verão, em 1972. O Waldi, um cãozinho da raça Dachshund, foi o primeiro mascote olímpico oficial. A escolha por um cachorro dessa raça foi devido a popularidade que ele possuía na Alemanha — algo que se estendeu ainda mais no mundo inteiro após o maior torneio esportivo do mundo.</p>
+									</div>
+								</div>
+							</div>
+							<div class=panel>
+								<div class=panel-heading>
+									<h5 class=panel-title><a class="accordion-toggle collapsed" data-toggle=collapse data-parent=#accordion href=#collapseThree>Nas telinhas</a></h5>
+								</div>
+								<div id=collapseThree class="panel-collapse collapse">
+									<div class=panel-body>
+										<p>Além de comerciais, o Dachshund já apareceu em diversos filmes, inclusive como protagonista. Entre os principais, estão: A Bob Pai e Bob Filho, O Salsicha Campeão, Um Amor de Companheiro, Wiener-Dog, Meu Tio e a consagrada trilogia de Toy Story com o cachorro de molas Slinky.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="parallax-object1 hidden-sm hidden-xs" data-100-start="right: 0%;" data-center-bottom=right:30%;><img src="img/illustrations/petbowl.webp" data-img="img/illustrations/petbowl.png" data-webp="img/illustrations/petbowl.webp" alt="petbowl"></div>
+					<div class="col-md-6 col-lg-5"><img src="img/dachshund-guia-racas.webp" data-img="img/dachshund-guia-racas.jpg" data-webp="img/dachshund-guia-racas.webp" class=img-responsive alt="Dachshund guia raças"></div>
+				</div>
+				<div class="section-heading text-center" id=historia>
+					<h2>A História do Dachshund</h2>
+				</div>
+				<div class="row margin1 text-center">
+					<div class="features col-lg-3 col-sm-6 col-xs-12">
+						<div class="col-xs-12 caixa-historia">
+							<h5>Origem</h5>
+							<p>Apesar da hipótese de que o Dachshund pode ter surgido até 4 mil anos antes de nós, na época egípcia, a Alemanha é considerada como país de origem da raça, onde os cãezinhos existiam desde a Idade Média, período vivido entre os séculos V e XV. Na época, o cachorro foi criado no tamanho ideal para a caça de Texugos.</p>
+						</div>
+					</div>
+					<div class="features col-lg-3 col-sm-6 col-xs-12">
+						<div class="col-xs-12 caixa-historia">
+							<h5>Reconhecimento</h5>
+							<p>Com o passar dos anos, o Teckel foi ganhando popularidade, em países como os Estados Unidos e a Inglaterra, principalmente após a rainha Vitória declarar sua paixão por cachorros da raça, tornando-a ainda mais popular no país. </p>
+						</div>
+					</div>
+					<div class="features col-lg-3 col-sm-6 col-xs-12">
+						<div class="col-xs-12 caixa-historia">
+							<h5>Drama nas Grandes Guerras</h5>
+							<p>Com a chegada da Primeira Guerra Mundial, por ser um cachorro de origem alemã, muitos ingleses e americanos passaram a extinguir a raça e até criaram campanhas contra o inocente cãozinho. Algo parecido aconteceu na Segunda Guerra Mundial, quando os Dackels tornavam-se popular novamente, mas em menor proporção.</p>
+						</div>
+					</div>
+					<div class="features col-lg-3 col-sm-6 col-xs-12">
+						<div class="col-xs-12 caixa-historia">
+							<h5>Volta por cima</h5>
+							<p>Após a segunda Grande Guerra, cachorros da raça voltaram a ser importados por americanos e a marca começou a dar sua volta por cima, figurando entre os mais populares cachorros das famílias americanas até os dias atuais.</p>
+						</div>
+					</div>
+				</div>
+				<div class=text-justify>
+					<div class="section-heading text-center margin-1">
+						<h3>Próximos aos Dachshunds</h3>
+					</div>
+					<p>Por possuir tamanhos e pelagens diferentes — algo que acontece com outras raças, como o Poodle — muitos confundem, achando que são raças diferentes. No entanto, as que mais se aproximam dele são as do grupo Basset, por conta do corpo comprido e patas curtinhas.</p>
+					<p>E, além dos Bassets, outras raças que possuem características próximas ao do Salsicha, como o faro apurado ou semelhanças físicas, são: Beagle, Bloodhound, Otterhound, entre outras.</p>
+				</div>
+		</section>
+		<section class="callout container-fluid no-padding" style=margin-top:100px>
+			<div class=row-fluid>
+				<div class="col-lg-8 col-md-12 no-padding" data-start="right: 20%;" data-center=right:0%;><img src="img/dachshund-caracteristicas-guia-racas.webp" data-img="img/dachshund-caracteristicas-guia-racas.jpg" data-webp="img/dachshund-caracteristicas-guia-racas.webp" class="img-responsive img-rounded" alt="Dachshund guia raças"></div>
+				<div class="callout-box col-lg-6 col-lg-offset-6 bg-darkcolor" data-start="left: 20%;" data-center=left:0%;>
+					<h3>Características físicas</h3>
+					<p>Não é muito difícil reconhecer um Dachshund na rua. Apesar do nome complicado, o Salsicha possui características físicas inconfundíveis, como o olhar sempre atento e as perninhas curtas que sustentam o comprido corpo do animal.</p>
+					<p>Com focinho longo, largo e forte, pode ser aberto até próximo aos olhos. Os olhos, independente do pelo ou tamanho, são médios, ovais, afastados e retratam a expressão de estar sempre ligado para qualquer coisa que aconteça. As orelhas arredondadas são altas e um tanto longas, mas não como as dos Basset Hound.</p>
+					<a href=https://www.petz.com.br/cachorro/racoes-e-alimentos onclick='ga("send","event",{eventCategory:"Guia Raças",eventAction:"Click",eventLabel:"categorias"})' class=btn>Conheça rações para Dachshund</a>
+				</div>
+			</div>
+		</section>
+		<div class="container-fluid bg-pattern margin1" data-bottom-top="background-position: 0px 70%,99% 70%;" data-top-bottom="background-position: 0px -50%,99% -50%;">
+			<div class=row>
+				<div class="col-md-10 col-md-offset-1">
+					<div id=owl-services class=owl-carousel>
+						<div class=col-xs-12>
+							<div class=box_icon>
+								<div class=icon>
+									<div class=image><img src="img/racao-para-cachorros-dachshund.webp" data-img="img/racao-para-cachorros-dachshund.png" data-webp="img/racao-para-cachorros-dachshund.webp" class=img-responsive alt="ração para cachorros Dachshund"></div>
+									<div class=info>
+										<h4>Ração para Dachshund</h4>
+										<p>Um bom tutor é aquele que se preocupa desde cedo com os melhores alimentos para o seu cãozinho. Sabendo disso, nós, da Petz, oferecemos as melhores opções de <a href="https://www.petz.com.br/cachorro/racoes-e-alimentos">ração</a> para que o seu Teckel cresça saudável e nutrido. Venha conferir!</p>
+										<a class=btn href=https://www.petz.com.br/cachorro/racoes-e-alimentos onclick='ga("send","event",{eventCategory:"Guia Raças",eventAction:"Click",eventLabel:"categorias"})'>Acessar Pet Shop</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=col-xs-12>
+							<div class=box_icon>
+								<div class=icon>
+									<div class=image><img src="img/shampoo-para-cachorros.webp" data-img="img/shampoo-para-cachorros.png" data-webp="img/shampoo-para-cachorros.webp" class=img-responsive alt="shampoo para cachorros"></div>
+									<div class=info>
+										<h4>Shampoo</h4>
+										<p>Independente da pelagem do seu salsicha, é necessário contar com produtos específicos para cachorros, como shampoos. Isso porque, produtos usados por nós, podem causar irritação na pele e pelagem do seu pet. </p>
+										<a class=btn href=https://www.petz.com.br/cachorro/higiene-e-beleza/banho-e-cosmeticos onclick='ga("send","event",{eventCategory:"Guia Raças",eventAction:"Click",eventLabel:"categorias"})'>Acessar Pet Shop</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=col-xs-12>
+							<div class=box_icon>
+								<div class=icon>
+									<div class=image><img src="img/antipulgas-cachorros.webp" data-img="img/antipulgas-cachorros.png" data-webp="img/antipulgas-cachorros.webp" class=img-responsive alt="antipulgas cachorros"></div>
+									<div class=info>
+										<h4>Antipulgas</h4>
+										<p>Por mais que tenhamos total atenção com os nossos companheiros, nem sempre conseguimos evitar que parasitas, como pulgas e carrapatos, incomodem o bem-estar dos pets. Nesses momentos, além de um médico-veterinário de confiança, contar com um bom antipulgas é essencial no tratamento. Escolha o seu aqui! </p>
+										<a class=btn href=https://www.petz.com.br/cachorro/medicamentos-e-saude/antipulgas-e-carrapatos onclick='ga("send","event",{eventCategory:"Guia Raças",eventAction:"Click",eventLabel:"categorias"})'>Acessar Pet Shop</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=col-xs-12>
+							<div class=box_icon>
+								<div class=icon>
+									<div class=image><img src="img/brinquedos-cachorros.webp" data-img="img/brinquedos-cachorros.png" data-webp="img/brinquedos-cachorros.webp" class=img-responsive alt="brinquedos cachorros"></div>
+									<div class=info>
+										<h4>Brinquedos</h4>
+										<p>Os Dachshunds são excelentes companheiros e nada melhor do que retribuir todo o carinho que eles nos dão com brinquedinhos, concorda? Então aproveite as mais variadas opções de acessórios que oferecemos para os peludos aqui na Petz!</p>
+										<a class=btn href=https://www.petz.com.br/cachorro/brinquedos onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"bloco1-petisco-cachorro"})'>Acessar Pet Shop</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=col-xs-12>
+							<div class=box_icon>
+								<div class=icon>
+									<div class=image><img src="img/caminha-cachorros.webp" data-img="img/caminha-cachorros.png" data-webp="img/caminha-cachorros.webp" class=img-responsive alt="caminha cachorros"></div>
+									<div class=info>
+										<h4>Cama</h4>
+										<p>Quando não estão entretidos caçando, esses cachorrinhos adoram descansar. Para isso, nada melhor do que contar com a caminha ideal que ajude seu pet a recuperar suas energias, não é? Então não deixe de conferir as opções que oferecemos aqui na Petz.</p>
+										<a class=btn href=https://www.petz.com.br/cachorro/cama-de-cachorro/camas onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"bloco1-antipulgas"})'>Acessar Pet Shop</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id=services-index>
+		<div class=container>
+			<div class=section-heading id=personalidade>
+				<h2>Personalidade</h2>
+			</div>
+			<div class=text-justify>
+				<p>Toda a fama e popularidade que os Teckels possuem pode estar ligado com a dócil personalidade dos cachorros dessa raça. Donos de um temperamento extremamente equilibrado, eles também são muito amigáveis e apaixonados por seus tutores. </p>
+				<p>E esse temperamento pode explicar porque é tão difícil ver um salsichinha nervoso ou agressivo. Além de se divertir com seus tutores, eles mantém as raízes de bom caçadores, e contam com um faro invejável. </p>
+				<p>Personalidade que tem exceções à regra e que é importante sempre trabalhar socialização e adestramento de forma correta.</p>
+				<div class="section-heading text-center margin-1">
+					<h3>Convivência</h3>
+				</div>
+				<p>Apesar de ter uma personalidade equilibrada, isso não significa que os cachorros são completamente calmos. Com olhar sempre em alerta, eles são cachorros independentes, mas adoram ter a família por perto.</p>
+				<p>Portanto, conviver com um Dachshund é extremamente simples: basta dar atenção quando ele pedir e espaço quando ele precisar. Para uma convivência tranquila também, sempre tenha todos os acessórios essenciais para garantir o bem-estar do animalzinho. </p>
+				<div class="section-heading text-center margin-1">
+					<h3>Socialização</h3>
+				</div>
+				<p>Amigável, equilibrado, alerta… são diversas características positivas que tornam o Dachshund um cãozinho tão amado. E se tiver alguma dúvida em contar com o pet em sua família, fique tranquilo, a socialização entre ele e todos da casa também será fácil. </p>
+				<p>Ao receber aquela visita que não é tão acostumada em casa, os salsichas não são do tipo que avança. E as crianças vão adorar a personalidade e a energia que esses cãezinhos possuem. </p>
+			</div>
+		</div>
+	</section>
+	<section id=about class=pages>
+		<div class=jumbotron data-stellar-background-ratio=0.5>
+			<div class=jumbo-heading id=saude data-stellar-background-ratio=1.2>
+				<h2 style=color:#fff>Saúde e Bem-estar</h2>
+			</div>
+		</div>
+		<div class=container>
+			<div class=row>
+				<div class="col-lg-7 col-md-6">
+					<h3>Escovação dos pelos</h3>
+					<p>A escovação de pelos do seu Dachshund vai depender de qual pelagem ele possui. Nos cãezinhos de pelo liso, a higienização é básica e não necessita a escovação semanal. No de pelo curto, é preciso escová-lo ao menos uma vez por semana e a tosa somente quando achar necessário. Já nos pets de pelo longo, é preciso uma atenção maior: escove duas vezes na semana e leve-o para tosas periódicas. </p>
+					<p>Para não incomodar o pet enquanto a escovação é feita, escolha acessórios desenvolvidos justamente para o estilo de pelos do animal. Aqui na Petz você encontra as melhores escovinhas para o seu companheiro.</p>
+					<p>Tenha paciência nesse processo. Nem sempre o cachorro irá adorar alguém escovando os seus pelos, por isso, é preciso começar aos poucos e desde filhote para que ele se adapte o mais cedo possível.</p>
+				</div>
+				<div class="col-lg-5 col-md-6 res-margin">
+					<img src="img/dachshund-escovacao-pelos.webp" data-img="img/dachshund-escovacao-pelos.jpg" data-webp="img/dachshund-escovacao-pelos.webp" class="img-rounded center-block img-responsive" alt="Escovação dos Pelos do Dachshund">
+				</div>
+			</div>
+			<div class="row margin1">
+				<div class="col-lg-7 col-sm-12 res-margin box-higiene">
+					<h3 class=text-center>Higiene</h3>
+					<p>Agora, quando for dar banho no seu cãozinho, sempre opte por produtos específicos para animais. Isso porque, nossos shampoos, por exemplo, possuem substâncias que fazem mal à pelagem do animal e podem prejudicar sua saúde. </p>
+				</div>
+				<div class="col-lg-5 col-sm-12">
+					<div class=panel-group id=accordionc>
+						<div class=panel>
+							<div class=panel-heading>
+								<h5 class=panel-title>
+									<a class=accordion-toggle data-toggle=collapse data-parent=#accordionc href=#collapseTwoc>Unhas e dentes</a>
+								</h5>
+							</div>
+							<div id=collapseTwoc class=panel-collapse>
+								<div class=panel-body>
+									<p>Normal em várias outras raças, a higiene bucal e o corte das unhas é extremamente necessário para garantir o bem-estar do pet. A primeira, evita mau hálito e o acúmulo de tártaro, já a segunda, reduz a probabilidade do pet se machucar ao se coçar. </p>
+								</div>
+							</div>
+						</div>
+						<div class=panel>
+							<div class=panel-heading>
+								<h5 class=panel-title>
+									<a class="accordion-toggle collapsed" data-toggle=collapse data-parent=#accordionc href=#collapseThreec>Inverno</a>
+								</h5>
+							</div>
+							<div id=collapseThreec class="panel-collapse collapse">
+								<div class=panel-body>
+									<p>Os pelos do Teckel não são o melhor cobertor para protegê-lo do frio, como ocorre com outras raças. No entanto, caso escolha aquecê-lo com roupinhas, escolha aquelas que deixarão o pet confortável enquanto usa. </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id=about class="pages padding-1">
+		<div class=container>
+			<div class=row>
+				<div class="col-lg-7 col-md-6">
+					<h3>Cuidados com a saúde do Dachshund</h3>
+					<p>Por mais que nos atentamos a todo momento, nossos companheiros podem acabar contraindo alguma doença durante a vida. Nesses momentos, é fundamental que o tutor tenha calma e não tente diagnosticá-lo sozinho, sempre leve-o ao médico-veterinário.</p>
+					<p>Com os Salsichas, a doença que mais requer preocupação ocorre no disco intervertebral, que decorre quando o pet está com sobrepeso. A luxação na patela também pode ocorrer, pois é comum em pets de pequeno porte. A região dos olhos também requer um cuidado especial, pois, com o passar do tempo, pode ficar seca e causar irritações. </p>
+				</div>
+				<div class="col-lg-5 col-md-6 res-margin">
+					<img src="img/dachshund-saudavel.webp" data-img="img/dachshund-saudavel.jpg" data-webp="img/dachshund-saudavel.webp" class="img-rounded center-block img-responsive" alt="Escovação dos Pelos do Dachshund">
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+	<div class=container>
+		<div class=section-heading id=personalidade>
+			<h2>Higiene e Limpeza para Dachshund</h2>
+		</div>
+		<div class="container-fluid bg-pattern margin1 text-center cta_produtos" data-bottom-top="background-position: 0px 70%,99% 70%;" data-top-bottom="background-position: 0px -50%,99% -50%;">
+			<div class=row>
+				<div class="col-md-10 col-md-offset-1">
+					<div id=owl-sample2 class=owl-carousel>
+						<div class=col-sm-12>
+							<div class=image> <img src="img/shampoo-pelos-escuros-dachshund.png" data-img="img/shampoo-pelos-escuros-dachshund.png" data-webp="img/shampoo-pelos-escuros-dachshund.webp" alt="Shampoo Sanol Dog para Cães de Pelos Escuros" class="img-circle img-responsive"></div>
+							<p><a href="https://www.petz.com.br/produto/shampoo-sanol-dog-para-caes-de-pelos-escuros-73058" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Shampoo Sanol Dog para Cães de Pelos Escuros</a></p>
+							<a class=btn href="https://www.petz.com.br/produto/shampoo-sanol-dog-para-caes-de-pelos-escuros-73058" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Comprar</a>
+						</div>
+						<div class=col-sm-12>
+							<div class=image><img src="img/petbrill-dachshund.png" data-img="img/petbrill-dachshund.png" data-webp="img/petbrill-dachshund.webp" alt="Shampoo Petbrilho Para Cães Pelos Escuros" class="img-circle img-responsive"></div>
+							<p><a href="https://www.petz.com.br/produto/shampoo-petbrilho-para-caes-pelos-escuros-97196" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Shampoo Petbrilho Para Cães Pelos Escuros</a></p>
+							<a class=btn href="https://www.petz.com.br/produto/shampoo-petbrilho-para-caes-pelos-escuros-97196" onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Comprar</a>
+						</div>
+						<div class=col-sm-12>
+							<div class=image><img src="img/ecofralda-dachshund.png" data-img="img/ecofralda-dachshund.png" data-webp="img/ecofralda-dachshund.webp" alt="Fralda Higiênica Dogs Care Ecofralda para Cães Fêmeas 12 Unidades" class="img-circle img-responsive"></div>
+							<p><a href=https://www.petz.com.br/produto/fralda-higienica-dogs-care-ecofralda-para-caes-femeas-12-unidades-71283 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Fralda Higiênica Dogs Care Ecofralda para Cães Fêmeas 12 Unidades</a></p>
+							<a class=btn href=https://www.petz.com.br/produto/fralda-higienica-dogs-care-ecofralda-para-caes-femeas-12-unidades-71283 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Comprar</a>
+						</div>
+
+						<div class=col-sm-12>
+							<div class=image><img src="img/colonia-dachshund.png" data-img="img/colonia-dachshund.png" data-webp="img/colonia-dachshund.webp" alt="Perfume Petlab para Cães Alecrim 120ml" class="img-circle img-responsive"></div>
+							<p><a href=https://www.petz.com.br/produto/perfume-petlab-para-caes-alecrim-120ml-148969 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Perfume Petlab para Cães Alecrim 120ml</a></p>
+							<a class=btn href=https://www.petz.com.br/produto/perfume-petlab-para-caes-alecrim-120ml-148969 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Comprar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id=services-index class=margin-3>
+		<div class=container>
+			<div class=section-heading>
+				<h3>Alimentação</h3>
+			</div>
+			<div class=text-justify>
+				<p>Assim como nós, a preocupação por uma boa alimentação ao seu companheiro poderá contribuir para uma vida longeva e saudável. Mas, para isso, é necessário saber escolher entre tantas opções a <strong>ração para Dachshund</strong> que mais irá beneficiar a sua nutrição.</p>
+				<p>Entre as mais indicadas, as rações específicas para a raça, porte ou idade do animal são as mais benéficas para o bem-estar dele. No entanto, há boas opções também de rações naturais e, claro, com moderação, os tradicionais petiscos para agradar o seu cãozinho. </p>
+				<div class="section-heading text-center margin-1">
+					<h3>Acompanhamento</h3>
+				</div>
+				<p>Uma das dicas mais importantes para qualquer tutor ou tutora, é sempre ter um médico-veterinário de confiança para cuidar da saúde do seu animal sempre que preciso. Com ele, você saberá a quantidade ideal a oferecer de ração e outras dicas importantes. </p>
+				<p>Além disso, visitas ao profissional são importantes, mesmo quando o pet não apresenta nenhum problema de saúde, pois assim, o médico consegue fazer um acompanhamento mais específico da vida do seu <a href="https://www.petz.com.br/cachorro">cachorro</a>. </p>
+			</div>
+		</div>
+	</section>
+	<section id=services-index>
+		<div class=container>
+			<div class=section-heading>
+				<h3>Filhotes</h3>
+			</div>
+			<div class=text-justify>
+				<div class="col-lg-5 col-md-6 res-margin"><img src="img/dachshund-filhote.webp" data-img="img/dachshund-filhote.jpg" data-webp="img/dachshund-filhote.webp" class="img-rounded center-block img-responsive" alt=Filhotes></div>
+				<p>Alguns cuidados são necessários aos tutores que vão escolher seu <strong>Dachshund filhote</strong>. O primeiro é em relação ao tamanho, pois, por ser um cachorro de pequeno porte, eles são ainda menores filhotinhos e nessa idade eles estão muito mais sensíveis. </p>
+				<p>Já depois de uns dias, é indicado que o tutor ou a tutora inicie um treinamento com o animal. Essa atividade fará com que ele cresça ainda mais sociável e não estranhe quando pessoas novas chegarem à sua casa.</p>
+			</div>
+		</div>
+	</section>
+	<section id=about class="pages padding-1">
+		<div class=container>
+			<div class=row>
+				<div id=dicas class="section-heading text-center">
+					<h2 class=margin-2>Dicas de adestramento</h2>
+				</div>
+				<ul class="nav nav-tabs">
+					<li class=active><a href=#A data-toggle=tab>Sobre a Raça</a></li>
+					<li><a href=#B data-toggle=tab>Profissionais</a></li>
+				</ul>
+				<div class=tabbable>
+					<div class=tab-content>
+						<div class="tab-pane active in fade" id=A>
+							<p>Os Teckels são cachorros extremamente curiosos e adoram sair por aí caçando algo para farejar. Porém, de acordo com o ranking de inteligência canina, desenvolvido pelo especialista norte-americano, Dr. Stanley Coren, a <strong>raça Dachshund</strong> ocupa o 49º lugar entre 79 raças, considerada uma inteligência intermediária.</p>
+						</div>
+						<div class="tab-pane fade" id=B>
+							<p>Com isso, especialistas indicam que o adestramento do pet seja facilitado pelo auxílio de um profissional em adestramento. No entanto, a presença do tutor é indispensável para que o cachorro execute os comandos e entenda que também deve obedecê-lo. Por fim, realizar atividades simples, como jogar o brinquedo para ele pegar, também é importante.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id=services-index class=margin-3>
+		<div class=container>
+			<div class=section-heading>
+				<h3>Enxoval para o Dachshund</h3>
+			</div>
+			<div class=text-justify>
+				<p>Agora que você já conhece toda a história do Dachshund — ou Salsicha, se for da sua preferência — chegou a hora de realizar todos os preparativos para receber o pet em sua casa, concorda? </p>
+				<p>Aqui, no <a href="https://www.petz.com.br/">Pet Shop</a> on-line da Petz, você encontra todos os itens essenciais para o bem-estar do seu companheiro com preços imperdíveis. Confira aqui e adquira os melhores produtos!</p>
+			</div>
+		</div>
+	</section>
+	<section id=about-index class=bg-lightcolor1>
+		<div class=container>
+			<div class="section-heading text-center" id=produtos>
+				<h2>Produtos mais comprados para o Dachshund</h2>
+			</div>
+			<div class="row margin1 text-center">
+				<div class="features col-lg-3 col-sm-6 col-xs-12">
+					<div class="col-xs-12 container-produto">
+						<div> <img src="img/royal-canin-dachshund.webp" data-img="img/royal-canin-dachshund.png" data-webp="img/royal-canin-dachshund.webp" alt="Ração Royal Canin Daschshund - Cães Adultos" class="img-circle img-responsive"></div>
+						<h5>Ração Royal Canin Daschshund - Cães Adultos</h5>
+						<a class=btn href=https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-adultos onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-supersecao"})'>Comprar</a>
+					</div>
+				</div>
+				<div class="features col-lg-3 col-sm-6 col-xs-12">
+					<div class="col-xs-12 container-produto">
+						<div><img src="img/royal-canin-filhotes-dachshund.webp" data-img="img/royal-canin-filhotes-dachshund.png" data-webp="img/royal-canin-filhotes-dachshund.webp" alt="Ração Royal Canin Daschshund - Cães Filhotes" class="img-circle img-responsive"></div>
+						<h5>Ração Royal Canin Daschshund - Cães Filhotes</h5>
+						<a class=btn href=https://www.petz.com.br/produto/racao-royal-canin-daschshund-caes-filhotes?semestoque=true onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-bravecto"})'>Comprar</a>
+					</div>
+				</div>
+				<div class="features col-lg-3 col-sm-6 col-xs-12">
+					<div class="col-xs-12 container-produto">
+						<div><img src="img/shampoo-pelos-escuros-dachshund.webp" data-img="img/shampoo-pelos-escuros-dachshund.png" data-webp="img/shampoo-pelos-escuros-dachshund.webp" alt="Shampoo Sanol Dog para Cães de Pelos Escuros" class="img-circle img-responsive"></div>
+						<h5>Shampoo Sanol Dog para Cães de Pelos Escuros</h5>
+						<a class=btn href=https://www.petz.com.br/produto/shampoo-sanol-dog-para-caes-de-pelos-escuros-73058 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-royalcanin"})'>Comprar</a>
+					</div>
+				</div>
+				<div class="features col-lg-3 col-sm-6 col-xs-12">
+					<div class="col-xs-12 container-produto">
+						<div><img src="img/ecofralda-dachshund.webp" data-img="img/ecofralda-dachshund.png" data-webp="img/ecofralda-dachshund.webp" alt="Fralda Higiênica Dogs Care Ecofralda para Cães Fêmeas 12 Unidades" class="img-circle img-responsive"></div>
+						<h5>Fralda Higiênica Dogs Care Ecofralda para Cães Fêmeas 12 Unidades</h5>
+						<a class=btn href=https://www.petz.com.br/produto/fralda-higienica-dogs-care-ecofralda-para-caes-femeas-12-unidades-71283 onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"mais-comprados-pedigree"})'>Comprar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id=adoption class="pages margin-6">
+		<div class=container>
+			<div id=racas class=section-heading>
+				<h3>Raças relacionadas</h3>
+			</div>
+			<div class="row margin1 margin-4">
+				<div class="col-md-12 margin1 margin-5">
+					<div id="lightbox ">
+						<div class="col-lg-4 col-sm-6 col-md-6 cat">
+							<div class=isotope-item>
+								<div class=adoption-thumb>
+									<img class="img-responsive img-circle" src="img/basset-hound-petz.webp" data-img="img/basset-hound-petz.jpg" data-webp="img/basset-hound-petz.webp" alt="Basset Hound">
+									<div class=adopt-header>
+										<h4>Basset Hound</h4>
+										<a class=btn href="https://www.petz.com.br/cachorro/racas/basset-hound">Saiba mais</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6 col-md-6 cat">
+							<div class=isotope-item>
+								<div class=adoption-thumb>
+									<img class="img-responsive img-circle" src="img/bull-terrier-petz.webp" data-img="img/bull-terrier-petz.jpg" data-webp="img/bull-terrier-petz.webp" alt="Bull Terrier">
+									<div class=adopt-header>
+										<h4>Bull Terrier</h4>
+										<a class=btn href="https://www.petz.com.br/cachorro/racas/bull-terrier">Saiba mais</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6 col-md-6 dog">
+							<div class=isotope-item>
+								<div class=adoption-thumb>
+									<img class="img-responsive img-circle" src="img/beagle-petz.webp" data-img="img/beagle-petz.jpg" data-webp="img/beagle-petz.webp" alt="Beagle">
+									<div class=adopt-header>
+										<h4>Beagle</h4>
+										<a class=btn href="https://www.petz.com.br/cachorro/racas/beagle">Saiba mais</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id=adoption class="pages margin-6">
+		<div class="container">
+			<p class="mais-racas"><a href="javascript: void(0);">Ver mais raças</a></p>
+<ul class="menu-racas">
+				
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/affenpinscher" onclick="showThrobber('-4_721', 'Affenpinscher');">
+					
+					<label class="faceta" id="label_-4_721">Affenpinscher </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/afghan-hound" onclick="showThrobber('-4_670', 'Afghan Hound');">
+					
+					<label class="faceta" id="label_-4_670">Afghan Hound </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/airedale-terrier" onclick="showThrobber('-4_722', 'Airedale Terrier');">
+					
+					<label class="faceta" id="label_-4_722">Airedale Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/akita-americano" onclick="showThrobber('-4_723', 'Akita Americano');">
+					
+					<label class="faceta" id="label_-4_723">Akita Americano </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/akita-inu" onclick="showThrobber('-4_671', 'Akita Inu');">
+					
+					<label class="faceta" id="label_-4_671">Akita Inu </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/basenji" onclick="showThrobber('-4_686', 'Basenji');">
+					
+					<label class="faceta" id="label_-4_686">Basenji </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/basset-hound" onclick="showThrobber('-4_673', 'Basset Hound');">
+					
+					<label class="faceta" id="label_-4_673">Basset Hound </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/beagle" onclick="showThrobber('-4_653', 'Beagle');">
+					
+					<label class="faceta" id="label_-4_653">Beagle </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bearded-collie" onclick="showThrobber('-4_750', 'Bearded Collie');">
+					
+					<label class="faceta" id="label_-4_750">Bearded Collie </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bernese" onclick="showThrobber('-4_675', 'Bernese');">
+					
+					<label class="faceta" id="label_-4_675">Bernese </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bichon-frise" onclick="showThrobber('-4_674', 'Bichon Frise');">
+					
+					<label class="faceta" id="label_-4_674">Bichon Frise </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bichon-havanes" onclick="showThrobber('-4_724', 'Bichon Havanês');">
+					
+					<label class="faceta" id="label_-4_724">Bichon Havanês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bloodhound" onclick="showThrobber('-4_676', 'Bloodhound');">
+					
+					<label class="faceta" id="label_-4_676">Bloodhound </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/blue-heeler" onclick="showThrobber('-4_677', 'Blue Heeler');">
+					
+					<label class="faceta" id="label_-4_677">Blue Heeler </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/border-collie" onclick="showThrobber('-4_650', 'Border collie');">
+					
+					<label class="faceta" id="label_-4_650">Border collie </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/borzoi" onclick="showThrobber('-4_725', 'Borzoi');">
+					
+					<label class="faceta" id="label_-4_725">Borzoi </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/boston-terrier" onclick="showThrobber('-4_701', 'Boston Terrier');">
+					
+					<label class="faceta" id="label_-4_701">Boston Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/boxer" onclick="showThrobber('-4_678', 'Boxer');">
+					
+					<label class="faceta" id="label_-4_678">Boxer </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/braco-alemao" onclick="showThrobber('-4_726', 'Braco Alemão');">
+					
+					<label class="faceta" id="label_-4_726">Braco Alemão </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/buldogue-frances" onclick="showThrobber('-4_681', 'Buldogue Francês');">
+					
+					<label class="faceta" id="label_-4_681">Buldogue Francês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bull-terrier" onclick="showThrobber('-4_651', 'Bull terrier');">
+					
+					<label class="faceta" id="label_-4_651">Bull terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bulldog" onclick="showThrobber('-4_659', 'Bulldog');">
+					
+					<label class="faceta" id="label_-4_659">Bulldog </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bulldog-americano" onclick="showThrobber('-4_679', 'Bulldog Americano');">
+					
+					<label class="faceta" id="label_-4_679">Bulldog Americano </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bulldog-campeiro" onclick="showThrobber('-4_680', 'Bulldog Campeiro');">
+					
+					<label class="faceta" id="label_-4_680">Bulldog Campeiro </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bulldog-ingles" onclick="showThrobber('-4_682', 'Bulldog Inglês');">
+					
+					<label class="faceta" id="label_-4_682">Bulldog Inglês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/bullmastiff" onclick="showThrobber('-4_683', 'Bullmastiff');">
+					
+					<label class="faceta" id="label_-4_683">Bullmastiff </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cairn-terrier" onclick="showThrobber('-4_727', 'Cairn Terrier');">
+					
+					<label class="faceta" id="label_-4_727">Cairn Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cane-corso" onclick="showThrobber('-4_684', 'Cane Corso');">
+					
+					<label class="faceta" id="label_-4_684">Cane Corso </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cavalier-king-charles-spaniel" onclick="showThrobber('-4_685', 'Cavalier King Charles Spaniel');">
+					
+					<label class="faceta" id="label_-4_685">Cavalier King Charles Spaniel </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/chihuahua" onclick="showThrobber('-4_661', 'Chihuahua');">
+					
+					<label class="faceta" id="label_-4_661">Chihuahua </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/chow-chow" onclick="showThrobber('-4_655', 'Chow Chow');">
+					
+					<label class="faceta" id="label_-4_655">Chow Chow </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cocker-spaniel-americano" onclick="showThrobber('-4_739', 'Cocker Spaniel Americano');">
+					
+					<label class="faceta" id="label_-4_739">Cocker Spaniel Americano </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cocker-spaniel-ingles" onclick="showThrobber('-4_687', 'Cocker Spaniel Inglês');">
+					
+					<label class="faceta" id="label_-4_687">Cocker Spaniel Inglês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/collie" onclick="showThrobber('-4_688', 'Collie');">
+					
+					<label class="faceta" id="label_-4_688">Collie </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/corgi" onclick="showThrobber('-4_689', 'Corgi');">
+					
+					<label class="faceta" id="label_-4_689">Corgi </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/coton-de-tulear" onclick="showThrobber('-4_740', 'Coton de Tulear');">
+					
+					<label class="faceta" id="label_-4_740">Coton de Tulear </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/cao-da-serra-da-estrela" onclick="showThrobber('-4_751', 'Cão da Serra da Estrela');">
+					
+					<label class="faceta" id="label_-4_751">Cão da Serra da Estrela </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/dachshund" onclick="showThrobber('-4_690', 'Dachshund');">
+					
+					<label class="faceta" id="label_-4_690">Dachshund </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/doberman" onclick="showThrobber('-4_692', 'Doberman');">
+					
+					<label class="faceta" id="label_-4_692">Doberman </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/dog-alemao" onclick="showThrobber('-4_693', 'Dog Alemão');">
+					
+					<label class="faceta" id="label_-4_693">Dog Alemão </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/dogo-argentino" onclick="showThrobber('-4_694', 'Dogo Argentino');">
+					
+					<label class="faceta" id="label_-4_694">Dogo Argentino </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/dogue-de-bordeaux" onclick="showThrobber('-4_695', 'Dogue de Bordeaux');">
+					
+					<label class="faceta" id="label_-4_695">Dogue de Bordeaux </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/dalmata" onclick="showThrobber('-4_691', 'Dálmata');">
+					
+					<label class="faceta" id="label_-4_691">Dálmata </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/fila-brasileiro" onclick="showThrobber('-4_696', 'Fila Brasileiro');">
+					
+					<label class="faceta" id="label_-4_696">Fila Brasileiro </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/flat-coated-retriever" onclick="showThrobber('-4_752', 'Flat Coated Retriever');">
+					
+					<label class="faceta" id="label_-4_752">Flat Coated Retriever </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/fox-paulistinha" onclick="showThrobber('-4_741', 'Fox Paulistinha');">
+					
+					<label class="faceta" id="label_-4_741">Fox Paulistinha </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/fox-terrier-de-pelo-duro" onclick="showThrobber('-4_753', 'Fox Terrier de Pelo Duro');">
+					
+					<label class="faceta" id="label_-4_753">Fox Terrier de Pelo Duro </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/fox-terrier-de-pelo-liso" onclick="showThrobber('-4_754', 'Fox Terrier de Pelo Liso');">
+					
+					<label class="faceta" id="label_-4_754">Fox Terrier de Pelo Liso </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/foxhound-ingles" onclick="showThrobber('-4_755', 'Foxhound Inglês');">
+					
+					<label class="faceta" id="label_-4_755">Foxhound Inglês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/golden-retriever" onclick="showThrobber('-4_649', 'Golden retriever');">
+					
+					<label class="faceta" id="label_-4_649">Golden retriever </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/greyhound" onclick="showThrobber('-4_697', 'Greyhound');">
+					
+					<label class="faceta" id="label_-4_697">Greyhound </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/griffon-de-bruxelas" onclick="showThrobber('-4_756', 'Griffon de Bruxelas');">
+					
+					<label class="faceta" id="label_-4_756">Griffon de Bruxelas </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/husky-siberiano" onclick="showThrobber('-4_646', 'Husky siberiano');">
+					
+					<label class="faceta" id="label_-4_646">Husky siberiano </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/jack-russell-terrier" onclick="showThrobber('-4_698', 'Jack Russell Terrier');">
+					
+					<label class="faceta" id="label_-4_698">Jack Russell Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/keeshond" onclick="showThrobber('-4_757', 'Keeshond');">
+					
+					<label class="faceta" id="label_-4_757">Keeshond </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/komondor" onclick="showThrobber('-4_728', 'Komondor');">
+					
+					<label class="faceta" id="label_-4_728">Komondor </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/kuvasz" onclick="showThrobber('-4_729', 'Kuvasz');">
+					
+					<label class="faceta" id="label_-4_729">Kuvasz </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/labrador" onclick="showThrobber('-4_654', 'Labrador');">
+					
+					<label class="faceta" id="label_-4_654">Labrador </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/lhasa-apso" onclick="showThrobber('-4_657', 'Lhasa Apso');">
+					
+					<label class="faceta" id="label_-4_657">Lhasa Apso </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/lulu-da-pomerania" onclick="showThrobber('-4_647', 'Lulu da Pomerânia');">
+					
+					<label class="faceta" id="label_-4_647">Lulu da Pomerânia </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/lebrel-irlandes" onclick="showThrobber('-4_758', 'Lébrel Irlandês');">
+					
+					<label class="faceta" id="label_-4_758">Lébrel Irlandês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/malamute-do-alasca" onclick="showThrobber('-4_699', 'Malamute do Alasca');">
+					
+					<label class="faceta" id="label_-4_699">Malamute do Alasca </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/maltes" onclick="showThrobber('-4_660', 'Maltês');">
+					
+					<label class="faceta" id="label_-4_660">Maltês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/mastiff" onclick="showThrobber('-4_702', 'Mastiff');">
+					
+					<label class="faceta" id="label_-4_702">Mastiff </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/mastim-espanhol" onclick="showThrobber('-4_759', 'Mastim Espanhol');">
+					
+					<label class="faceta" id="label_-4_759">Mastim Espanhol </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/mastim-napolitano" onclick="showThrobber('-4_703', 'Mastim Napolitano');">
+					
+					<label class="faceta" id="label_-4_703">Mastim Napolitano </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/mastim-tibetano" onclick="showThrobber('-4_704', 'Mastim Tibetano');">
+					
+					<label class="faceta" id="label_-4_704">Mastim Tibetano </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/norfolk-terrier" onclick="showThrobber('-4_760', 'Norfolk Terrier');">
+					
+					<label class="faceta" id="label_-4_760">Norfolk Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/old-english-sheepdog" onclick="showThrobber('-4_742', 'Old English Sheepdog');">
+					
+					<label class="faceta" id="label_-4_742">Old English Sheepdog </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-alemao" onclick="showThrobber('-4_658', 'Pastor Alemão');">
+					
+					<label class="faceta" id="label_-4_658">Pastor Alemão </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-australiano" onclick="showThrobber('-4_705', 'Pastor Australiano');">
+					
+					<label class="faceta" id="label_-4_705">Pastor Australiano </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-belga" onclick="showThrobber('-4_706', 'Pastor Belga');">
+					
+					<label class="faceta" id="label_-4_706">Pastor Belga </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-belga-groenendael" onclick="showThrobber('-4_761', 'Pastor Belga Groenendael');">
+					
+					<label class="faceta" id="label_-4_761">Pastor Belga Groenendael </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-belga-malinois" onclick="showThrobber('-4_707', 'Pastor Belga Malinois');">
+					
+					<label class="faceta" id="label_-4_707">Pastor Belga Malinois </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-bergamasco" onclick="showThrobber('-4_762', 'Pastor Bergamasco');">
+					
+					<label class="faceta" id="label_-4_762">Pastor Bergamasco </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-branco-suico" onclick="showThrobber('-4_708', 'Pastor Branco Suíço');">
+					
+					<label class="faceta" id="label_-4_708">Pastor Branco Suíço </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-maremano-abruzes" onclick="showThrobber('-4_763', 'Pastor Maremano Abruzês');">
+					
+					<label class="faceta" id="label_-4_763">Pastor Maremano Abruzês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-de-beauce" onclick="showThrobber('-4_743', 'Pastor de Beauce');">
+					
+					<label class="faceta" id="label_-4_743">Pastor de Beauce </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-de-shetland" onclick="showThrobber('-4_709', 'Pastor de Shetland');">
+					
+					<label class="faceta" id="label_-4_709">Pastor de Shetland </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pastor-do-caucaso" onclick="showThrobber('-4_730', 'Pastor do Cáucaso');">
+					
+					<label class="faceta" id="label_-4_730">Pastor do Cáucaso </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pequines" onclick="showThrobber('-4_710', 'Pequinês');">
+					
+					<label class="faceta" id="label_-4_710">Pequinês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/perdigueiro" onclick="showThrobber('-4_711', 'Perdigueiro');">
+					
+					<label class="faceta" id="label_-4_711">Perdigueiro </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pinscher" onclick="showThrobber('-4_665', 'Pinscher');">
+					
+					<label class="faceta" id="label_-4_665">Pinscher </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pitbull" onclick="showThrobber('-4_672', 'Pitbull');">
+					
+					<label class="faceta" id="label_-4_672">Pitbull </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/podengo-portugues" onclick="showThrobber('-4_764', 'Podengo Português');">
+					
+					<label class="faceta" id="label_-4_764">Podengo Português </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pointer-ingles" onclick="showThrobber('-4_731', 'Pointer Inglês');">
+					
+					<label class="faceta" id="label_-4_731">Pointer Inglês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/poodle" onclick="showThrobber('-4_662', 'Poodle');">
+					
+					<label class="faceta" id="label_-4_662">Poodle </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/pug" onclick="showThrobber('-4_644', 'Pug');">
+					
+					<label class="faceta" id="label_-4_644">Pug </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/puli" onclick="showThrobber('-4_744', 'Puli');">
+					
+					<label class="faceta" id="label_-4_744">Puli </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/rhodesian-ridgeback" onclick="showThrobber('-4_732', 'Rhodesian Ridgeback');">
+					
+					<label class="faceta" id="label_-4_732">Rhodesian Ridgeback </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/rottweiler" onclick="showThrobber('-4_645', 'Rottweiler');">
+					
+					<label class="faceta" id="label_-4_645">Rottweiler </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/saluki" onclick="showThrobber('-4_733', 'Saluki');">
+					
+					<label class="faceta" id="label_-4_733">Saluki </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/samoieda" onclick="showThrobber('-4_712', 'Samoieda');">
+					
+					<label class="faceta" id="label_-4_712">Samoieda </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/schipperke" onclick="showThrobber('-4_734', 'Schipperke');">
+					
+					<label class="faceta" id="label_-4_734">Schipperke </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/schnauzer-gigante" onclick="showThrobber('-4_745', 'Schnauzer Gigante');">
+					
+					<label class="faceta" id="label_-4_745">Schnauzer Gigante </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/schnauzer-miniatura" onclick="showThrobber('-4_713', 'Schnauzer Miniatura');">
+					
+					<label class="faceta" id="label_-4_713">Schnauzer Miniatura </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/schnauzer-standard" onclick="showThrobber('-4_766', 'Schnauzer Standard');">
+					
+					<label class="faceta" id="label_-4_766">Schnauzer Standard </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/scottish-terrier" onclick="showThrobber('-4_735', 'Scottish Terrier');">
+					
+					<label class="faceta" id="label_-4_735">Scottish Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/setter-irlandes" onclick="showThrobber('-4_767', 'Setter Irlandês');">
+					
+					<label class="faceta" id="label_-4_767">Setter Irlandês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/shar-pei" onclick="showThrobber('-4_663', 'Shar Pei');">
+					
+					<label class="faceta" id="label_-4_663">Shar Pei </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/shiba-inu" onclick="showThrobber('-4_714', 'Shiba Inu');">
+					
+					<label class="faceta" id="label_-4_714">Shiba Inu </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/shih-tzu" onclick="showThrobber('-4_656', 'Shih Tzu');">
+					
+					<label class="faceta" id="label_-4_656">Shih Tzu </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/spaniel-bretao" onclick="showThrobber('-4_768', 'Spaniel Bretão');">
+					
+					<label class="faceta" id="label_-4_768">Spaniel Bretão </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/spitz-japones" onclick="showThrobber('-4_769', 'Spitz Japonês');">
+					
+					<label class="faceta" id="label_-4_769">Spitz Japonês </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/springer-spaniel-ingles" onclick="showThrobber('-4_736', 'Springer Spaniel Inglês');">
+					
+					<label class="faceta" id="label_-4_736">Springer Spaniel Inglês </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/staffordshire-bull-terrier" onclick="showThrobber('-4_715', 'Staffordshire Bull Terrier');">
+					
+					<label class="faceta" id="label_-4_715">Staffordshire Bull Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/sao-bernardo-cachorro" onclick="showThrobber('-4_719', 'São Bernardo Cachorro');">
+					
+					<label class="faceta" id="label_-4_719">São Bernardo Cachorro </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/terra-nova-cachorro" onclick="showThrobber('-4_771', 'Terra Nova Cachorro');">
+					
+					<label class="faceta" id="label_-4_771">Terra Nova Cachorro </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/terrier-tibetano" onclick="showThrobber('-4_774', 'Terrier Tibetano');">
+					
+					<label class="faceta" id="label_-4_774">Terrier Tibetano </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/tervuren" onclick="showThrobber('-4_776', 'Tervuren');">
+					
+					<label class="faceta" id="label_-4_776">Tervuren </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/tosa-inu" onclick="showThrobber('-4_746', 'Tosa Inu');">
+					
+					<label class="faceta" id="label_-4_746">Tosa Inu </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/vira-lata" onclick="showThrobber('-4_716', 'Vira Lata');">
+					
+					<label class="faceta" id="label_-4_716">Vira Lata </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/vizsla" onclick="showThrobber('-4_747', 'Vizsla');">
+					
+					<label class="faceta" id="label_-4_747">Vizsla </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/weimaraner" onclick="showThrobber('-4_717', 'Weimaraner');">
+					
+					<label class="faceta" id="label_-4_717">Weimaraner </label>
+					</a>
+				</li>
+			
+				<li class="zebra1">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/welsh-corgi-cardigan" onclick="showThrobber('-4_779', 'Welsh Corgi Cardigan');">
+					
+					<label class="faceta" id="label_-4_779">Welsh Corgi Cardigan </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/west-highland-white-terrier" onclick="showThrobber('-4_700', 'West Highland White Terrier');">
+					
+					<label class="faceta" id="label_-4_700">West Highland White Terrier </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/whippet" onclick="showThrobber('-4_718', 'Whippet');">
+					
+					<label class="faceta" id="label_-4_718">Whippet </label>
+					</a>
+				</li>
+			
+				<li class="zebra2">
+					
+					
+						<a class="categoria-faceta" href="https://www.petz.com.br/cachorro/racas/yorkshire" onclick="showThrobber('-4_664', 'Yorkshire');">
+					
+					<label class="faceta" id="label_-4_664">Yorkshire </label>
+					</a>
+				</li>
+			
+		
+		<li class="zebra1"><a onclick="verMais(this);" class="ver-mais hide">Ver mais...</a></li>
+		 
+	</ul>		</div>
+	</section>
+	<div class="clearfix"></div>
+	<div class="container-fluid padding-1">
+		<section class="call-to-action small-section bg1" data-stellar-background-ratio="0.2 ">
+			<div class="container text-center">
+				<div class="col-md-5 bg-darkcolor well caixa-pesquisa">
+					<div class=col-md-12>
+						<div class=form-pesquisa>
+							<form action=https://relacionamento.lojapetz.com.br/pub/rf method="POST " accept-charset="UTF-8 " target="_blank " onsubmit="try {return window.confirm(&quot;Você está enviando informações para uma página externa.\nTem certeza?&quot;);} catch (e)
+            {return false;}">
+								<div class=text-pesquisa>
+									<h4>Pesquisa - Qual o seu pet?</h4>
+								</div>
+								<div class=box-form001>
+									<div class=form-pesquisa-dados>Nome: <input name=CLI_NOM_REDUZ> </div>
+									<div class=form-pesquisa-dados>E-mail: <input type=email name=EMAIL_ADDRESS_></div>
+									<input type=hidden name=EMAIL_PERMISSION_STATUS_ value="I ">
+									<div class=form-pesquisa-dados-001>
+										<div class=form-pesquisa-001><input type=checkbox name="FLG_CAO " value=Y> Cachorro</div>
+										<div class=form-pesquisa-001><input type=checkbox name="FLG_GATO " value=Y> Gato</div>
+										<div class=form-pesquisa-001><input type=checkbox name="FLG_OUTROS " value=Y> Outros</div>
+										<input type=hidden name=BLACK_FRIDAY18 value=Y>
+									</div>
+									<div class=form-pesquisa-bt><button type=submit>Enviar</button></div>
+									<input type=hidden name=_ri_ value=X0Gzc2X%3DYQpglLjHJlTQGkqS2zc564BhzddfYizdT5XIlREFDMwrzcuEyvUmza7RVwjpnpgHlpgneHmgJoXX0Gzc2X%3DYQpglLjHJlTQGj6gAhCzd0SUPze9kvXeaccB5EFDMwrzcuEyvUmza7R>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<div class=container>
+			<div class="col-md-4 text-center"><img src="img/logo-petz.webp" data-img="img/logo-petz.jpg" data-webp="img/logo-petz.webp" alt="Petz" class="center-block img-responsive"></div>
+			<div class="col-md-4 text-center res-margin">
+				<ul class=list-unstyled>
+					<li><i class="fa fa-phone"></i>(11) 3434-6980</li>
+					<li><i class="fa fa-envelope"></i>De Segunda a sexta das 9h às 18h.</li>
+					<li><i class="fa fa-map-marker"></i><a href=https://www.petz.com.br/nossas-lojas onclick='ga("send","event",{eventCategory:"Guia de raças - Dachshund",eventAction:"Click",eventLabel:"nossas-lojas"})'>Nossas Lojas</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 text-center res-margin">
+				<h5>Siga-nos!</h5>
+				<div class=social-media>
+					<a href=https://www.youtube.com/petztube><i class="fa fa-youtube"></i></a>
+					<a href=https://www.facebook.com/petzbr><i class="fa fa-facebook"></i></a>
+					<a href=https://www.instagram.com/somospetz /><i class="fa fa-instagram"></i></a>
+				</div>
+			</div>
+			<div style=text-align:center>
+				<p style=color:#666>
+					PET CENTER COMÉRCIO E PARTICIPAÇÕES S/A | CNPJ 18.328.118/0013-42 | ENDEREÇO: RUA DR. MIGUEL PAULO CAPALBO, 135 - PARI - SÃO PAULO/SP - CEP: 03035-040 COPYRIGHT ® 2018 PET CENTER MARGINAL TODOS OS DIREITOS RESERVADOS.</p>
+			</div>
+		</div>
+		<div class="page-scroll hidden-sm hidden-xs"><a href=#page-top class=back-to-top><i class="fa fa-angle-up"></i></a></div>
+	</footer>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,800" rel=stylesheet>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel=stylesheet>
+	<script src=https://www.petz.com.br/cachorro/racas/dachshund/js/jquery.min.js></script>
+	<script src=https://www.petz.com.br/cachorro/racas/dachshund/js/bootstrap.min.js></script>
+	<script src=https://www.petz.com.br/cachorro/racas/dachshund/js/main.js></script>
+	<script src=https://www.petz.com.br/cachorro/racas/dachshund/js/plugins.js></script>
+	<script src=js/modernizr-custom.js></script>
+	<script type="text/javascript">
+		$(window).load(function() { // Carregamento do site
+			var item = $('html').hasClass('webp') ? 'webp' : 'img'; // Atribui o valor a variável item
+			function getWebp(item) { // Nome da função recebendo a variável item
+				$('img').each(function() { // Busca todas as imagens do site
+					$(this).attr('src', $(this).data(item)); // Trocará o Source da imagem
+				});
+			}
+			getWebp(item); // Inicia a função passando a variável item como o parâmetro 
+		});
+		$(document).on("click", ".mais-racas a", function() {
+			$(".menu-racas").slideToggle(function() {});
+		});
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cdc8fc4c06","applicationID":"1364726241","transactionName":"NVNSZRNQXEZZB0RbDQwZZUMIHlFUWwxfQBANGVRQAllBXU0KVB0LDFJVSU9BWkU=","queueTime":0,"applicationTime":2,"atts":"GRRRE1tKT0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
